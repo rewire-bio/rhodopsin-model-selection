@@ -5,6 +5,7 @@ Standalone study repository, migrated from the model-selection article series.
 - [Historical-evidence paper (PDF)](paper/rhodopsin-model-selection.pdf)
 - [Paper source](paper/main.tex) and [evidence mapping](evidence/paper-migration-map.json)
 - [Maintenance audit](evidence/reviews/2026-10-06-maintenance-audit.md)
+- [Latest detailed research article](article/blog-research-version-20261006.md) — preserved before the readable blog replacement, including October corrections
 - [Original detailed article](article/original.md)
 - [Executable companion](companion/README.md)
 - [Source provenance](evidence/import-manifest.json)
@@ -16,7 +17,7 @@ Standalone study repository, migrated from the model-selection article series.
 
 The original measurements and code are imported. The historical-evidence manuscript and PDF are complete; independent scientific reproduction remains pending. The generic harness configuration is unconfigured and must not be used to claim verified results. Follow the companion README for the original runnable workflow. No new experiment, human approval, or independent reproduction is claimed by this migration.
 
-The repository will hold the detailed methods and paper; the blog will provide a shorter accessible explanation. Original third-party licences and notices remain applicable; no blanket relicensing is applied.
+The repository holds the detailed research article, methods and paper. The blog provides the accessible explanation; its replacement is prepared separately from this preservation commit. Original third-party licences and notices remain applicable; no blanket relicensing is applied.
 
 ## Validation and paper build
 
