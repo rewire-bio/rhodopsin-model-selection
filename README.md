@@ -5,6 +5,9 @@ Standalone study repository, migrated from the model-selection article series.
 - [Original detailed article](article/original.md)
 - [Executable companion](companion/README.md)
 - [Source provenance](evidence/import-manifest.json)
+- [Byte-identical published original](article/published-original.md)
+- [Migration preservation audit](evidence/migration-audit.json)
+- [Recovered original prediction arrays](evidence/recovered-original-results/README.md)
 
 ## Status
 
