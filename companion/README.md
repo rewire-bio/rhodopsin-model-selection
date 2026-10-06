@@ -125,7 +125,7 @@ was **slower** than CPU for a model this small. All headline numbers are CPU num
 python -m pytest tests/ -q
 ```
 
-44 tests, of which 43 run and 1 skips when no completed panel run is present. They target
+The suite includes synthetic regression tests and optional archived-data checks. They target
 the ways this code could produce a plausible but wrong wavelength:
 a substituted data file, wrong split counts, a leaked held-out label, a constant predictor
 scored as though it had a rank correlation, NDCG tie handling, silently cropped user
@@ -143,3 +143,13 @@ run time from your local copy for the same reason.
 
 The upstream data keeps its own CC-BY 4.0 terms and no new licence is asserted over it.
 Licensing of the original code here is an open review item.
+
+## Maintained-code audit (October 2026)
+
+The published archives remain historical evidence. The maintained companion validates saved
+labels, neighbour metadata and finite prediction vectors before analysis. Each panel run
+requires a new or empty output directory to preserve previous attempts. Embedding caches
+now include encoder provenance and a vector checksum. Old cache files require explicit
+`panel --refresh-embeddings`; a CPU request rejects a cache generated on another device.
+These guards do not alter the fixed models or establish a new scientific reproduction.
+Root `make test` runs the companion suite; the root harness and paper remain pending.

@@ -25,9 +25,16 @@ NDCG_POLICY = (
 )
 
 
+def paired_vectors(targets, predictions) -> tuple[np.ndarray, np.ndarray]:
+    targets, predictions = np.asarray(targets, float), np.asarray(predictions, float)
+    if (targets.ndim != 1 or predictions.shape != targets.shape or not len(targets)
+            or not np.isfinite(targets).all() or not np.isfinite(predictions).all()):
+        raise ValueError("Targets and predictions must be nonempty, finite, equal-length vectors")
+    return targets, predictions
+
+
 def spearman(targets: np.ndarray, predictions: np.ndarray) -> float | None:
-    targets = np.asarray(targets, dtype=float)
-    predictions = np.asarray(predictions, dtype=float)
+    targets, predictions = paired_vectors(targets, predictions)
     if len(targets) < 2 or np.ptp(targets) == 0 or np.ptp(predictions) == 0:
         return None
     return float(spearmanr(targets, predictions).statistic)
@@ -35,18 +42,19 @@ def spearman(targets: np.ndarray, predictions: np.ndarray) -> float | None:
 
 def ndcg(targets: np.ndarray, predictions: np.ndarray) -> float:
     """Full-ranking NDCG under the pinned upstream relevance transform."""
-    targets = np.asarray(targets, dtype=float)
-    predictions = np.asarray(predictions, dtype=float)
+    targets, predictions = paired_vectors(targets, predictions)
     relevance = targets - targets.min()
     return float(ndcg_score(relevance[None, :], predictions[None, :]))
 
 
 def mae(targets: np.ndarray, predictions: np.ndarray) -> float:
-    return float(np.mean(np.abs(np.asarray(targets, float) - np.asarray(predictions, float))))
+    targets, predictions = paired_vectors(targets, predictions)
+    return float(np.mean(np.abs(targets - predictions)))
 
 
 def rmse(targets: np.ndarray, predictions: np.ndarray) -> float:
-    diff = np.asarray(targets, float) - np.asarray(predictions, float)
+    targets, predictions = paired_vectors(targets, predictions)
+    diff = targets - predictions
     return float(np.sqrt(np.mean(diff**2)))
 
 

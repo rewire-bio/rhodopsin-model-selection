@@ -10,6 +10,7 @@ import csv
 import gzip
 import hashlib
 import io
+import math
 import os
 import urllib.request
 from dataclasses import dataclass
@@ -111,7 +112,10 @@ def parse(path: Path, *, allow_unverified: bool = False) -> tuple[list[Row], dic
         sequence = record["sequence"]
         if not sequence or set(sequence) - set(AMINO_ACIDS):
             raise ValueError(f"Row {index} carries residues outside the 20-letter alphabet")
-        rows.append(Row(index, seq_id(sequence), sequence, float(record["target"]), split))
+        target = float(record["target"])
+        if not math.isfinite(target):
+            raise ValueError(f"Row {index} has a non-finite target")
+        rows.append(Row(index, seq_id(sequence), sequence, target, split))
 
     counts = {s: sum(r.split == s for r in rows) for s in EXPECTED_COUNTS}
     if counts != EXPECTED_COUNTS:

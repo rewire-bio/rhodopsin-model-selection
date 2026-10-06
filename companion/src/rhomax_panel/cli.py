@@ -18,7 +18,7 @@ from pathlib import Path
 
 import numpy as np
 
-from . import analysis, data, features, metrics, models, posthoc
+from . import analysis, data, features, metrics, models, posthoc, artifacts
 
 # The five historical configurations, exactly as archived. Reruns must not substitute
 # tuned variants; see evidence/frozen-exploratory-protocol.md section 9.
@@ -89,16 +89,13 @@ def _embedding_matrix(rows, name, args, cache: Path, receipts: dict) -> np.ndarr
     key = features.embedding_cache_key(name, data.CSV_SHA256)
     path = cache / f"embeddings-{name}-{key}.npz"
     if path.exists() and not args.refresh_embeddings:
-        stored = np.load(path, allow_pickle=False)
-        if list(stored["seq_ids"]) != [r.seq_id for r in rows]:
-            raise ValueError(f"Cached embeddings in {path} do not match the loaded rows")
+        vectors, provenance = features.load_embedding_cache(path, rows, name, device=args.device)
         receipts[name] = {
-            "source": "cache",
-            "path": path.name,
-            "cache_bytes": path.stat().st_size,
+            "source": "cache", "path": path.name, "cache_bytes": path.stat().st_size,
+            "provenance": provenance,
             "note": "reused cached embeddings; timings are not a fresh measurement",
         }
-        return stored["vectors"]
+        return vectors
 
     checkpoint = cache / f"{name}.pt"
     if not checkpoint.exists():
@@ -109,7 +106,7 @@ def _embedding_matrix(rows, name, args, cache: Path, receipts: dict) -> np.ndarr
     vectors, receipt = features.esm2_embeddings(
         rows, checkpoint, name, device=args.device, batch_size=args.batch_size, threads=args.threads
     )
-    np.savez(path, vectors=vectors, seq_ids=np.asarray([r.seq_id for r in rows]))
+    features.save_embedding_cache(path, vectors, rows, name, receipt, device=args.device)
     receipt |= {"source": "fresh run", "path": path.name, "cache_bytes": path.stat().st_size}
     receipts[name] = receipt
     return vectors
@@ -118,6 +115,8 @@ def _embedding_matrix(rows, name, args, cache: Path, receipts: dict) -> np.ndarr
 def cmd_panel(args) -> int:
     cache = _cache(args)
     output = Path(args.output).resolve()
+    if output.exists() and any(output.iterdir()):
+        raise ValueError("Panel output must be a new or empty directory; preserve existing results")
     output.mkdir(parents=True, exist_ok=True)
 
     started = time.perf_counter()
@@ -270,22 +269,11 @@ def cmd_analyse(args) -> int:
     stored = np.load(output / "test-predictions.npz", allow_pickle=False)
     rows, _ = data.load(cache, allow_unverified=args.allow_unverified)
     test = data.by_split(rows, "test")
-    if list(stored["seq_ids"]) != [r.seq_id for r in test]:
-        raise ValueError("Stored predictions do not match the loaded test rows")
-
+    predictions = artifacts.validate_predictions(stored, rows, "test")
     targets = stored["targets"]
     distances = stored["distances"]
-    # Older result files predate this flag; fall back to the distance sentinel for them.
-    length_match = (
-        [bool(x) for x in stored["has_length_match"]]
-        if "has_length_match" in stored.files
-        else None
-    )
-    predictions = {
-        key: stored[key]
-        for key in stored.files
-        if key not in analysis.NON_PREDICTION_KEYS
-    }
+    # Derive the flag for legacy files rather than trusting an ambiguous distance sentinel.
+    length_match = [n is not None for n in models.nearest_training_sequence(rows)[2]]
     groups = analysis.reconstruct_groups(test)
 
     sizes = {g: groups.count(g) for g in set(groups)}
@@ -356,8 +344,9 @@ def cmd_analyse(args) -> int:
     if validation_path.exists():
         stored_validation = np.load(validation_path, allow_pickle=False)
         validation_rows = data.by_split(rows, "validation")
-        if list(stored_validation["seq_ids"]) != [r.seq_id for r in validation_rows]:
-            raise ValueError("Stored validation predictions do not match the loaded validation rows")
+        validation_predictions = artifacts.validate_predictions(stored_validation, rows, "validation")
+        if set(validation_predictions) != set(predictions):
+            raise ValueError("Test and validation prediction model sets differ")
         validation_groups = analysis.reconstruct_groups(validation_rows)
         report["post_hoc"]["validation_interval_feasibility"] = {
             label: posthoc.validation_interval_feasibility(
@@ -432,7 +421,7 @@ def cmd_predict(args) -> int:
         "caveat": (
             "A prediction outside the training wavelength range is an extrapolation by a "
             "linear head and carries no measured error estimate. Distance to the nearest "
-            "training sequence is reported so that can be judged; distance 1.0 means no "
+            "training sequence is reported so that can be judged; a null neighbour ID means no "
             "training sequence of the same length, the regime in which this panel was "
             "least accurate."
         ),
@@ -495,6 +484,11 @@ def main(argv: list[str] | None = None) -> int:
     predict.set_defaults(func=cmd_predict)
 
     args = parser.parse_args(argv)
+    for name in ("batch_size", "threads"):
+        if hasattr(args, name) and getattr(args, name) < 1:
+            parser.error(f"--{name.replace('_', '-')} must be positive")
+    if hasattr(args, "tolerance") and (not np.isfinite(args.tolerance) or args.tolerance < 0):
+        parser.error("--tolerance must be finite and nonnegative")
     return args.func(args)
 
 

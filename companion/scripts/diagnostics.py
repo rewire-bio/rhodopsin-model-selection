@@ -19,7 +19,7 @@ from pathlib import Path
 
 import numpy as np
 
-from rhomax_panel import analysis, data, features
+from rhomax_panel import analysis, data, features, artifacts
 
 
 def main() -> int:
@@ -33,6 +33,10 @@ def main() -> int:
 
     cache = Path(args.cache).expanduser().resolve()
     stored = np.load(Path(args.results).resolve() / "test-predictions.npz", allow_pickle=False)
+    rows, _ = data.load(cache)
+    predictions = artifacts.validate_predictions(stored, rows, "test")
+    if not 1 <= args.capacity <= len(stored["targets"]):
+        parser.error("capacity must lie between 1 and the number of test rows")
     targets = stored["targets"]
     labels = [k for k in stored.files if k not in analysis.NON_PREDICTION_KEYS]
 
@@ -56,7 +60,6 @@ def main() -> int:
 
     # Why the spreads differ: alpha is fixed at 10 and features are not scaled, so the
     # shrinkage each representation feels depends on that representation's own scale.
-    rows, _ = data.load(cache)
     sequences = [r.sequence for r in rows]
     matrices = {
         "composition-22": features.composition_22(sequences),
@@ -65,7 +68,7 @@ def main() -> int:
     for label, name in (("esm2-8m", "esm2_t6_8M_UR50D"), ("esm2-35m", "esm2_t12_35M_UR50D")):
         path = cache / f"embeddings-{name}-{features.embedding_cache_key(name, data.CSV_SHA256)}.npz"
         if path.exists():
-            matrices[label] = np.load(path, allow_pickle=False)["vectors"]
+            matrices[label], _ = features.load_embedding_cache(path, rows, name)
 
     scale = {
         "alpha": 10.0,
