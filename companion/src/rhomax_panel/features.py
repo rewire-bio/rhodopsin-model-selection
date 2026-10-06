@@ -14,7 +14,7 @@ from pathlib import Path
 
 import numpy as np
 
-from .data import AMINO_ACIDS, Row
+from .data import AMINO_ACIDS, Row, CSV_SHA256
 
 # Pinned checkpoint identities, verified before loading the official pickle.
 CHECKPOINTS = {
@@ -97,6 +97,8 @@ def esm2_embeddings(
 
     Returns the matrix in ``rows`` order plus a timing and provenance receipt.
     """
+    if batch_size < 1 or threads < 1:
+        raise ValueError("batch_size and threads must be positive")
     import esm
     import torch
 
@@ -160,3 +162,58 @@ def embedding_cache_key(model_name: str, csv_sha256: str) -> str:
     layer = CHECKPOINTS[model_name]["layer"]
     material = f"{model_name}:layer{layer}:{CHECKPOINTS[model_name]['sha256']}:{csv_sha256}"
     return hashlib.sha256(material.encode()).hexdigest()[:16]
+
+
+def _vectors_digest(vectors: np.ndarray) -> str:
+    return hashlib.sha256(np.ascontiguousarray(vectors).tobytes()).hexdigest()
+
+
+def save_embedding_cache(path: Path, vectors: np.ndarray, rows: list[Row], model_name: str,
+                         receipt: dict, *, device: str) -> None:
+    import json
+
+    _validate_vectors(vectors, rows, model_name)
+    metadata = {
+        "schema_version": 1, "model": model_name,
+        "checkpoint_sha256": CHECKPOINTS[model_name]["sha256"],
+        "dataset_csv_sha256": CSV_SHA256,
+        "pooling": "final-layer residue mean excluding BOS/EOS/padding",
+        "device": device, "vectors_sha256": _vectors_digest(vectors),
+        "generation_receipt": receipt,
+    }
+    np.savez(path, vectors=vectors, seq_ids=np.asarray([r.seq_id for r in rows]),
+             metadata_json=np.asarray(json.dumps(metadata, sort_keys=True)))
+
+
+def _validate_vectors(vectors: np.ndarray, rows: list[Row], model_name: str) -> None:
+    expected = (len(rows), CHECKPOINTS[model_name]["dimension"])
+    if vectors.shape != expected or not np.isfinite(vectors).all():
+        raise ValueError(f"Embedding matrix must be finite with shape {expected}")
+
+
+def load_embedding_cache(path: Path, rows: list[Row], model_name: str, *, device: str | None = None):
+    """A cache checksum detects accidental corruption; it is not an authenticity signature."""
+    import json
+    from .data import CSV_SHA256
+
+    with np.load(path, allow_pickle=False) as stored:
+        if "metadata_json" not in stored:
+            raise ValueError("Legacy embeddings lack provenance; use panel --refresh-embeddings")
+        metadata = json.loads(str(stored["metadata_json"]))
+        expected = {"schema_version": 1, "model": model_name,
+                    "checkpoint_sha256": CHECKPOINTS[model_name]["sha256"],
+                    "dataset_csv_sha256": CSV_SHA256,
+                    "pooling": "final-layer residue mean excluding BOS/EOS/padding"}
+        if any(metadata.get(k) != v for k, v in expected.items()):
+            raise ValueError("Embedding cache encoder provenance mismatch; refresh embeddings")
+        if device is not None and metadata.get("device") != device:
+            raise ValueError("Embedding cache device mismatch; use panel --refresh-embeddings")
+        if not isinstance(metadata.get("generation_receipt"), dict):
+            raise ValueError("Embedding cache generation receipt is missing")
+        if not np.array_equal(stored["seq_ids"], [r.seq_id for r in rows]):
+            raise ValueError("Embedding cache row IDs differ from loaded rows")
+        vectors = stored["vectors"]
+        _validate_vectors(vectors, rows, model_name)
+        if _vectors_digest(vectors) != metadata.get("vectors_sha256"):
+            raise ValueError("Embedding cache vector checksum mismatch")
+    return vectors, metadata

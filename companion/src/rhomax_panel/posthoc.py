@@ -22,6 +22,7 @@ import numpy as np
 
 from .analysis import BAND, BAND_CENTRE, CAPACITY
 from .data import Row
+from .metrics import paired_vectors
 
 
 def _band_precision(targets: np.ndarray, predictions: np.ndarray, capacity: int) -> float | None:
@@ -54,6 +55,9 @@ def shortlist_bootstrap(
     because resampled lists vary in length when groups are unequal. The realised spread
     of capacity is reported so an interval is never read as "exactly 10".
     """
+    targets, predictions = paired_vectors(targets, predictions)
+    if len(groups) != len(targets) or draws < 1 or not 1 <= capacity <= len(targets):
+        raise ValueError("Bootstrap needs matching groups, positive draws and feasible capacity")
     if np.ptp(predictions) == 0:
         return {
             "post_hoc_not_predeclared": True,
@@ -80,6 +84,10 @@ def shortlist_bootstrap(
         means.append(mean)
         caps.append(cap)
 
+    if not precisions:
+        return {"post_hoc_not_predeclared": True, "defined": False,
+                "reason": "no usable bootstrap draws", "draws": draws, "seed": seed,
+                "usable_draws": 0, "skipped_draws": skipped}
     precisions, means, caps = np.asarray(precisions), np.asarray(means), np.asarray(caps)
     return {
         "post_hoc_not_predeclared": True,

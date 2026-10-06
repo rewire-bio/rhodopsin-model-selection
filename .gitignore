@@ -13,3 +13,6 @@ blog-handoff/
 # Portable evidence must survive Git ignore rules for generated outputs.
 !evidence/archive/
 !evidence/archive/**
+companion/cache/
+.pytest_cache/
+paper/generated/

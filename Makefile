@@ -1,20 +1,17 @@
-.PHONY: smoke reproduce analysis paper test data
+.PHONY: test setup data smoke reproduce analysis paper
 
-data:
-	uv run --frozen python scripts/data.py --fetch
+setup:
+	uv venv --python 3.11 companion/.venv
+	uv pip install --python companion/.venv/bin/python -r companion/requirements-locked.txt
+	uv pip install --python companion/.venv/bin/python --no-deps -e companion
 
 test:
-	uv run --frozen python -m unittest discover -s tests -v
+	companion/.venv/bin/python -m pytest companion/tests -q
 
-smoke: data test
-	uv run --frozen python scripts/experiment.py --config configs/smoke.json --output results/smoke
-
-reproduce: data test
-	uv run --frozen python scripts/experiment.py --config configs/full.json --output results/full
-	$(MAKE) analysis paper
-
-analysis:
-	uv run --frozen python scripts/analyse.py --results results/full/results.json
+# Harness execution and manuscript completion remain explicitly pending.
+data smoke reproduce analysis:
+	@echo 'Study harness/manuscript pending; use companion/README.md. No full reproduction is claimed.' >&2
+	@exit 1
 
 paper:
 	uv run --frozen python scripts/build_paper.py
