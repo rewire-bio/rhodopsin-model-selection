@@ -1,0 +1,28 @@
+{
+  "recovered_at_utc": "2026-10-06T10:53:43.868643+00:00",
+  "reason": "The original published archive README listed these arrays but the tarball omitted them. The migration preserved that tarball exactly; this supplement restores the original retained arrays.",
+  "run_identity": "The source directory panel-receipt.json and all nine overlapping result artifacts match the published tarball byte-for-byte.",
+  "files": [
+    {
+      "name": "test-predictions.npz",
+      "bytes": 23358,
+      "sha256": "a7ee991c3354bf22327239cda2ec2580cda389a0295b7fa8e6d9ae15087ce2a5",
+      "source": "original article workspace, runs/results/test-predictions.npz",
+      "status": "recovered unchanged; not regenerated"
+    },
+    {
+      "name": "validation-predictions.npz",
+      "bytes": 12942,
+      "sha256": "c72b57247b270874f5b0592858185e7cff1653f813da48e88cb58b0365aaa20e",
+      "source": "original article workspace, runs/results/validation-predictions.npz",
+      "status": "recovered unchanged; not regenerated"
+    }
+  ],
+  "example_fasta": {
+    "sha256": "8741203af41dd5e2162626598711100fd6e8aed2a2421841c5fe61af29942bd0",
+    "bytes": 1428,
+    "status": "retained in original local workspace; not deleted; not redistributed because original archive explicitly excludes amino-acid sequences",
+    "reader_route": "Use the original companion data and inference instructions with the pinned upstream dataset."
+  },
+  "no_new_experiment": true
+}

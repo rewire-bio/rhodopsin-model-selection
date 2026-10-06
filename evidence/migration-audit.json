@@ -398,5 +398,6 @@
     }
   ],
   "recovered_files": [],
-  "status": "PASS"
+  "status": "PASS",
+  "additional_recovery": "evidence/recovered-original-results/recovery-manifest.json"
 }
