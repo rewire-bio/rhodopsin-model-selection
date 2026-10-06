@@ -8,9 +8,9 @@ setup:
 test:
 	companion/.venv/bin/python -m pytest companion/tests -q
 
-# Harness execution and manuscript completion remain explicitly pending.
+# Scientific harness execution and independent reproduction remain pending.
 data smoke reproduce analysis:
-	@echo 'Study harness/manuscript pending; use companion/README.md. No full reproduction is claimed.' >&2
+	@echo 'Scientific harness/reproduction pending; use companion/README.md. Historical paper is complete.' >&2
 	@exit 1
 
 paper:

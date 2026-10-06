@@ -33,6 +33,7 @@ cd companion
 uv venv --python 3.11 .venv
 VIRTUAL_ENV=.venv uv pip install -r requirements-locked.txt
 VIRTUAL_ENV=.venv uv pip install -e . --no-deps
+source .venv/bin/activate
 mkdir -p cache
 ```
 
@@ -67,7 +68,7 @@ Composition and the constant only, about 4 seconds on CPU:
 
 ```bash
 rhomax-panel --cache ./cache verify
-rhomax-panel --cache ./cache panel --output ./results --skip-esm
+rhomax-panel --cache ./cache panel --output ./results-baselines --skip-esm
 ```
 
 This already reproduces three of the five archived configurations.
@@ -152,7 +153,8 @@ requires a new or empty output directory to preserve previous attempts. Embeddin
 now include encoder provenance and a vector checksum. Old cache files require explicit
 `panel --refresh-embeddings`; a CPU request rejects a cache generated on another device.
 These guards do not alter the fixed models or establish a new scientific reproduction.
-Root `make test` runs the companion suite; the root harness and paper remain pending.
+Root `make test` runs the companion suite. The historical-evidence paper is complete;
+the root scientific harness and independent reproduction remain pending.
 
 The documented `--skip-esm` panel remains available. `analyse` records present and
 missing configurations and whether validation predictions exist in `input_scope`.
