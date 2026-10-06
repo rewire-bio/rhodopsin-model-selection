@@ -33,6 +33,7 @@ cd companion
 uv venv --python 3.11 .venv
 VIRTUAL_ENV=.venv uv pip install -r requirements-locked.txt
 VIRTUAL_ENV=.venv uv pip install -e . --no-deps
+source .venv/bin/activate
 mkdir -p cache
 ```
 
@@ -67,7 +68,7 @@ Composition and the constant only, about 4 seconds on CPU:
 
 ```bash
 rhomax-panel --cache ./cache verify
-rhomax-panel --cache ./cache panel --output ./results --skip-esm
+rhomax-panel --cache ./cache panel --output ./results-baselines --skip-esm
 ```
 
 This already reproduces three of the five archived configurations.
