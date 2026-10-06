@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "scope": "Historical evidence formatting only; no scientific rerun",
+  "original_article": "article/published-original.md",
+  "link_adjusted_article": "article/original.md",
+  "original_tables": {
+    "1": "Decision recommendations retained in original article; paper Results and Limitations explain supported scope",
+    "2": "paper/generated/tab_main_compact.tex and tab_panel.tex",
+    "3": "paper/generated/tab_spread.tex",
+    "4": "paper/generated/tab_decisionA.tex",
+    "5": "paper/generated/tab_decisionB.tex and tab_shortlistB.tex",
+    "6": "paper/generated/tab_bins.tex",
+    "7": "paper/generated/tab_rows.tex",
+    "8": "paper/generated/tab_probe.tex"
+  },
+  "original_figures": {
+    "1": "article/assets/01-decision-path.svg and its D2 source remain preserved; paper Methods and Results cover decisions",
+    "2": "article/assets/01-rank-versus-error.png included in paper",
+    "3": "article/assets/02-prediction-spread.png included in paper",
+    "4": "article/assets/04-two-decisions.png included in paper",
+    "5": "article/assets/03-distance-bins.png included in paper"
+  },
+  "additional_archived_results": {
+    "panel-receipt.json": "panel, reproduction and timing tables; environment and endpoint statements",
+    "exploratory-analysis.json": "bootstrap, strata, per-group, shortlist and interval tables",
+    "diagnostics.json": "representation scale, prediction spread and finite-population chance tables",
+    "ndcg-finite-reference.json": "Additional preserved diagnostics",
+    "device-agreement.json": "Additional preserved diagnostics",
+    "test-predictions.json": "Example rows, shortlist rows and retrospective oracle",
+    "independent-recomputation.txt": "historical receipt status; preserved unchanged in archive",
+    "source-ledger.md": "attribution, scope and provenance; preserved unchanged in archive",
+    "frozen-exploratory-protocol.md": "Methods and original protocol; preserved unchanged in archive",
+    "ARCHIVE-README.md": "preserved unchanged in archive",
+    "example-predictions.json": "preserved unchanged in archive; user-inference example is not benchmark evidence"
+  },
+  "recovered_arrays": "evidence/recovered-original-results/ with original hashes; not regenerated",
+  "historical_code": "downloads/rhomax-wavelength-panel-code.tar.gz unchanged",
+  "omission_policy": "Original narrative, full bibliography, source diagram, examples and every archive member remain available even when not duplicated verbatim in the PDF"
+}

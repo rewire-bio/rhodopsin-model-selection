@@ -113,3 +113,26 @@ def test_nonfinite_dataset_targets_are_rejected_even_when_unverified(tmp_path):
     path.write_text('sequence,target,set,validation\nAAAA,nan,train,False\n')
     with pytest.raises(ValueError, match='non-finite'):
         data.parse(path, allow_unverified=True)
+
+
+def test_partial_analysis_is_explicit_and_missing_validation_is_not_complete(tmp_path, monkeypatch):
+    arrays = valid_predictions()
+    arrays['training-mean'] = arrays.pop('model')
+    np.savez(tmp_path / 'test-predictions.npz', **arrays)
+    monkeypatch.setattr(data, 'load', lambda *a, **k: (rows(), {}))
+    monkeypatch.setattr(posthoc, 'shortlist_bootstrap', lambda *a, **k: {'defined': False})
+    args = SimpleNamespace(cache=str(tmp_path), output=str(tmp_path), allow_unverified=False,
+                           baseline='training-mean')
+    assert cli.cmd_analyse(args) == 0
+    scope = json.loads((tmp_path / 'exploratory-analysis.json').read_text())['input_scope']
+    assert scope['complete_panel'] is False and scope['complete_inputs'] is False
+    assert scope['configurations_present'] == ['training-mean']
+    assert 'esm2-35m' in scope['missing_configurations']
+    assert scope['validation_predictions'] == 'missing'
+
+
+def test_analysis_refuses_unknown_model_column(tmp_path, monkeypatch):
+    np.savez(tmp_path / 'test-predictions.npz', **valid_predictions())
+    monkeypatch.setattr(data, 'load', lambda *a, **k: (rows(), {}))
+    with pytest.raises(ValueError, match='Unknown prediction'):
+        cli.cmd_analyse(SimpleNamespace(cache=str(tmp_path), output=str(tmp_path), allow_unverified=False))

@@ -9,6 +9,9 @@ test:
 	companion/.venv/bin/python -m pytest companion/tests -q
 
 # Harness execution and manuscript completion remain explicitly pending.
-data smoke reproduce analysis paper:
+data smoke reproduce analysis:
 	@echo 'Study harness/manuscript pending; use companion/README.md. No full reproduction is claimed.' >&2
 	@exit 1
+
+paper:
+	uv run --frozen python scripts/build_paper.py

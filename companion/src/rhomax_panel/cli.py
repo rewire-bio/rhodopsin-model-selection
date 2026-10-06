@@ -270,6 +270,11 @@ def cmd_analyse(args) -> int:
     rows, _ = data.load(cache, allow_unverified=args.allow_unverified)
     test = data.by_split(rows, "test")
     predictions = artifacts.validate_predictions(stored, rows, "test")
+    expected_models = set(HISTORICAL) | {NEW_CONTROL}
+    if set(predictions) - expected_models:
+        raise ValueError("Unknown prediction columns in historical panel")
+    missing_models = sorted(expected_models - set(predictions))
+    validation_present = (output / "validation-predictions.npz").is_file()
     targets = stored["targets"]
     distances = stored["distances"]
     # Derive the flag for legacy files rather than trusting an ambiguous distance sentinel.
@@ -280,6 +285,14 @@ def cmd_analyse(args) -> int:
     report = {
         "experiment": "rhomax-background-distance-exploratory-2026-10-01",
         "status": "exploratory, not preregistered, not confirmatory",
+        "input_scope": {
+            "complete_panel": not missing_models,
+            "complete_inputs": not missing_models and validation_present,
+            "configurations_present": sorted(predictions),
+            "missing_configurations": missing_models,
+            "validation_predictions": "present" if validation_present else "missing",
+            "note": "Partial panels are supported for --skip-esm; missing inputs are not a full reproduction",
+        },
         "endpoint_scope": ENDPOINT_SCOPE,
         "grouping": {
             "rule": "equal sequence length and single-linkage Hamming distance <= 10% of length",

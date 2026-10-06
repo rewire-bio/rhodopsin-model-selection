@@ -1,0 +1,48 @@
+{
+  "archive": "downloads/rhomax-wavelength-results.tar.gz",
+  "archive_members_present": [
+    "ARCHIVE-README.md",
+    "device-agreement.json",
+    "diagnostics.json",
+    "example-predictions.json",
+    "exploratory-analysis.json",
+    "frozen-exploratory-protocol.md",
+    "independent-recomputation.txt",
+    "ndcg-finite-reference.json",
+    "panel-receipt.json",
+    "source-ledger.md",
+    "test-predictions.json"
+  ],
+  "archive_sha256": "29e4b468acd0b969ec73077fb3aafbd43ad76176c569409b85ef6744bf9dfb0b",
+  "cross_check_against_article_values": "Tables 2-6 and 8, NDCG scale, chance levels, regularisation ratios, timings (numeric, at printed precision)",
+  "cross_check_mismatches": [],
+  "generated": [
+    "macros.tex",
+    "tab_bins.tex",
+    "tab_bootstrap.tex",
+    "tab_chance.tex",
+    "tab_decisionA.tex",
+    "tab_decisionB.tex",
+    "tab_groups.tex",
+    "tab_panel.tex",
+    "tab_probe.tex",
+    "tab_regularisation.tex",
+    "tab_repro.tex",
+    "tab_rows.tex",
+    "tab_shortlistB.tex",
+    "tab_spread.tex",
+    "tab_timings.tex"
+  ],
+  "independent_recomputation_excerpt": "Tolerance 1e-12, independent of the package's own metrics module.",
+  "kind": "formatting/extraction only; no recomputation (the oracle row is the mean of the ten largest archived test targets)",
+  "members_read_in_memory": {
+    "rhomax-wavelength-results/device-agreement.json": "fc66c51f3130cb1bd8532632021b74778d417ce1691404d7111c036176b7b7c9",
+    "rhomax-wavelength-results/diagnostics.json": "ef23c90566fcb2e82eee2f9303ccb5697e1f51b828f49ea8d0858f521d9bcd20",
+    "rhomax-wavelength-results/exploratory-analysis.json": "d1b692c23c8a2811ff73507e5d3790d9f7245a7b325fc4ce5813a5cc1dc4db00",
+    "rhomax-wavelength-results/independent-recomputation.txt": "f691f3def6797813dd7f7911fd4b433b485d0c6b3497b536ea96e9799a31aec4",
+    "rhomax-wavelength-results/ndcg-finite-reference.json": "0086fcef50b5d9c3377fb0e72dac66688ab6ba6273db8b61c1259cd349bc01fe",
+    "rhomax-wavelength-results/panel-receipt.json": "ef051925255c9eeda9562c78d3094c8ec0c588fa3ac2d75ea09bbbd43aa68f67",
+    "rhomax-wavelength-results/test-predictions.json": "48ac3f06e7f985e59f44fb0af2bd0a9c48f4b9f1b2f73e0b7a8062382e7b024e"
+  },
+  "schema_version": 1
+}

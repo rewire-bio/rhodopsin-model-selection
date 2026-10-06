@@ -14,3 +14,19 @@ jobs:
       - run: make setup
       - run: make test
       - run: python scripts/check_evidence.py
+  paper:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update && sudo apt-get install -y texlive-latex-extra texlive-fonts-recommended lmodern
+      - run: python3 scripts/build_paper.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: historical-evidence-paper
+          path: |
+            paper/build/main.pdf
+            paper/build/build-receipt.json
+            paper/generated/extraction-receipt.json
+            paper/generated/historical-claims.json
+          if-no-files-found: error

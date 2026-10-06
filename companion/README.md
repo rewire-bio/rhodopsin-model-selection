@@ -153,3 +153,9 @@ now include encoder provenance and a vector checksum. Old cache files require ex
 `panel --refresh-embeddings`; a CPU request rejects a cache generated on another device.
 These guards do not alter the fixed models or establish a new scientific reproduction.
 Root `make test` runs the companion suite; the root harness and paper remain pending.
+
+The documented `--skip-esm` panel remains available. `analyse` records present and
+missing configurations and whether validation predictions exist in `input_scope`.
+Partial panels or absent validation inputs are explicitly marked incomplete; absent
+validation skips only the labelled post-hoc interval probe. Unknown configuration
+columns and mismatched test/validation model sets are refused.

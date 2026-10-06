@@ -1,0 +1,2426 @@
+{
+  "archive": "downloads/rhomax-wavelength-results.tar.gz",
+  "archive_sha256": "29e4b468acd0b969ec73077fb3aafbd43ad76176c569409b85ef6744bf9dfb0b",
+  "claims": [
+    {
+      "archive_member": "rhomax-wavelength-results/panel-receipt.json",
+      "id": "panel-receipt.json:scores",
+      "kind": "historical-evidence",
+      "member_sha256": "ef051925255c9eeda9562c78d3094c8ec0c588fa3ac2d75ea09bbbd43aa68f67",
+      "result_pointer": "scores",
+      "value": {
+        "composition-22": {
+          "mae_nm": 24.359482421243055,
+          "n": 184,
+          "ndcg": 0.9548154942827918,
+          "rmse_nm": 32.290190646660236,
+          "spearman": 0.41798958279508075
+        },
+        "composition-40": {
+          "mae_nm": 24.359617962926105,
+          "n": 184,
+          "ndcg": 0.954819941821582,
+          "rmse_nm": 32.29034919740601,
+          "spearman": 0.41818225155801514
+        },
+        "esm2-35m": {
+          "mae_nm": 29.162865862889536,
+          "n": 184,
+          "ndcg": 0.9072580204736261,
+          "rmse_nm": 39.04152893350159,
+          "spearman": -0.2217595033467806
+        },
+        "esm2-8m": {
+          "mae_nm": 28.898897209189993,
+          "n": 184,
+          "ndcg": 0.8964799835636942,
+          "rmse_nm": 41.2290132851116,
+          "spearman": -0.1463506755340845
+        },
+        "nearest-train-seq": {
+          "mae_nm": 27.498957712924355,
+          "n": 184,
+          "ndcg": 0.9453458614930982,
+          "rmse_nm": 34.72790111396847,
+          "spearman": 0.33847859213193376
+        },
+        "training-mean": {
+          "mae_nm": 24.60326086956522,
+          "n": 184,
+          "ndcg": 0.9206667522227658,
+          "rmse_nm": 32.50221786352368,
+          "spearman": null
+        }
+      }
+    },
+    {
+      "archive_member": "rhomax-wavelength-results/panel-receipt.json",
+      "id": "panel-receipt.json:reproduction_vs_archive",
+      "kind": "historical-evidence",
+      "member_sha256": "ef051925255c9eeda9562c78d3094c8ec0c588fa3ac2d75ea09bbbd43aa68f67",
+      "result_pointer": "reproduction_vs_archive",
+      "value": [
+        {
+          "checks": {
+            "ndcg": {
+              "absolute_difference": 0.0,
+              "agrees": true,
+              "archived": 0.9206667522227658,
+              "recomputed": 0.9206667522227658
+            },
+            "spearman": {
+              "agrees": true,
+              "archived": null,
+              "recomputed": null
+            }
+          },
+          "configuration": "training-mean",
+          "status": "match"
+        },
+        {
+          "checks": {
+            "ndcg": {
+              "absolute_difference": 0.0,
+              "agrees": true,
+              "archived": 0.954819941821582,
+              "recomputed": 0.954819941821582
+            },
+            "spearman": {
+              "absolute_difference": 0.0,
+              "agrees": true,
+              "archived": 0.41818225155801514,
+              "recomputed": 0.41818225155801514
+            }
+          },
+          "configuration": "composition-40",
+          "status": "match"
+        },
+        {
+          "checks": {
+            "ndcg": {
+              "absolute_difference": 0.0,
+              "agrees": true,
+              "archived": 0.9548154942827918,
+              "recomputed": 0.9548154942827918
+            },
+            "spearman": {
+              "absolute_difference": 0.0,
+              "agrees": true,
+              "archived": 0.41798958279508075,
+              "recomputed": 0.41798958279508075
+            }
+          },
+          "configuration": "composition-22",
+          "status": "match"
+        },
+        {
+          "checks": {
+            "ndcg": {
+              "absolute_difference": 0.0,
+              "agrees": true,
+              "archived": 0.8964799835636942,
+              "recomputed": 0.8964799835636942
+            },
+            "spearman": {
+              "absolute_difference": 0.0,
+              "agrees": true,
+              "archived": -0.1463506755340845,
+              "recomputed": -0.1463506755340845
+            }
+          },
+          "configuration": "esm2-8m",
+          "status": "match"
+        },
+        {
+          "checks": {
+            "ndcg": {
+              "absolute_difference": 0.0,
+              "agrees": true,
+              "archived": 0.9072580204736261,
+              "recomputed": 0.9072580204736261
+            },
+            "spearman": {
+              "absolute_difference": 0.0,
+              "agrees": true,
+              "archived": -0.2217595033467806,
+              "recomputed": -0.2217595033467806
+            }
+          },
+          "configuration": "esm2-35m",
+          "status": "match"
+        }
+      ]
+    },
+    {
+      "archive_member": "rhomax-wavelength-results/panel-receipt.json",
+      "id": "panel-receipt.json:timings_seconds",
+      "kind": "historical-evidence",
+      "member_sha256": "ef051925255c9eeda9562c78d3094c8ec0c588fa3ac2d75ea09bbbd43aa68f67",
+      "result_pointer": "timings_seconds",
+      "value": {
+        "composition-22": {
+          "constant_zero_columns": 1,
+          "feature_dimension": 22,
+          "feature_seconds": 0.0038072919996920973,
+          "fit_predict_seconds": 0.0010089159914059564
+        },
+        "composition-40": {
+          "constant_zero_columns": 20,
+          "feature_dimension": 40,
+          "feature_seconds": 0.005264332998194732,
+          "fit_predict_seconds": 0.0014374169986695051
+        },
+        "esm2-35m": {
+          "embedding": {
+            "batch_size": 4,
+            "cache_bytes": 3437506,
+            "checkpoint_sha256": "7f21e80e61d16a71735163ef555d3009afb0c98da74c48e29df08606973cc55e",
+            "checkpoint_url": "https://dl.fbaipublicfiles.com/fair-esm/models/esm2_t12_35M_UR50D.pt",
+            "device": "cpu",
+            "dimension": 480,
+            "embed_seconds": 35.22146537499793,
+            "encoder_frozen": true,
+            "fair_esm_version": "2.0.0",
+            "load_seconds": 0.13992775000224356,
+            "model": "esm2_t12_35M_UR50D",
+            "path": "embeddings-esm2_t12_35M_UR50D-3a1cf634a5c31913.npz",
+            "pooling": "mean over residues excluding BOS/EOS and padding",
+            "published_result_reproduction": false,
+            "representation_layer": 12,
+            "sequences_encoded": 884,
+            "source": "fresh run",
+            "torch_seed": 0,
+            "torch_threads": 4,
+            "torch_version": "2.2.2",
+            "training_overlap": "unreported; UniRef50 pretraining may overlap these proteins"
+          },
+          "feature_dimension": 480,
+          "fit_predict_seconds": 0.007430917001329362
+        },
+        "esm2-8m": {
+          "embedding": {
+            "batch_size": 4,
+            "cache_bytes": 2305986,
+            "checkpoint_sha256": "46f002a9870c9bdecd0ea887acb1f9a38a6b561e8f8bf8a6990b679b9d31b928",
+            "checkpoint_url": "https://dl.fbaipublicfiles.com/fair-esm/models/esm2_t6_8M_UR50D.pt",
+            "device": "cpu",
+            "dimension": 320,
+            "embed_seconds": 13.19044504201156,
+            "encoder_frozen": true,
+            "fair_esm_version": "2.0.0",
+            "load_seconds": 0.0205182500067167,
+            "model": "esm2_t6_8M_UR50D",
+            "path": "embeddings-esm2_t6_8M_UR50D-5160ca2b3a92481a.npz",
+            "pooling": "mean over residues excluding BOS/EOS and padding",
+            "published_result_reproduction": false,
+            "representation_layer": 6,
+            "sequences_encoded": 884,
+            "source": "fresh run",
+            "torch_seed": 0,
+            "torch_threads": 4,
+            "torch_version": "2.2.2",
+            "training_overlap": "unreported; UniRef50 pretraining may overlap these proteins"
+          },
+          "feature_dimension": 320,
+          "fit_predict_seconds": 0.04406816700065974
+        },
+        "nearest-train-seq": {
+          "fit_predict_seconds": 0.015195792002486996
+        },
+        "training-mean": {
+          "fit_predict_seconds": 0.00010841700714081526
+        }
+      }
+    },
+    {
+      "archive_member": "rhomax-wavelength-results/panel-receipt.json",
+      "id": "panel-receipt.json:environment",
+      "kind": "historical-evidence",
+      "member_sha256": "ef051925255c9eeda9562c78d3094c8ec0c588fa3ac2d75ea09bbbd43aa68f67",
+      "result_pointer": "environment",
+      "value": {
+        "machine": "arm64",
+        "numpy": "1.26.4",
+        "platform": "macOS-26.6.2-arm64-arm-64bit",
+        "python": "3.11.13",
+        "scikit-learn": "1.8.0",
+        "scipy": "1.15.3",
+        "torch": "2.2.2"
+      }
+    },
+    {
+      "archive_member": "rhomax-wavelength-results/panel-receipt.json",
+      "id": "panel-receipt.json:source",
+      "kind": "historical-evidence",
+      "member_sha256": "ef051925255c9eeda9562c78d3094c8ec0c588fa3ac2d75ea09bbbd43aa68f67",
+      "result_pointer": "source",
+      "value": {
+        "csv_sha256": "8e78f6a16cd5298131dca83130d4b94cc0ab4ae9c699460880441c19a65f656f",
+        "csv_sha256_matches_pin": true,
+        "dataset_version": "zenodo-18433203-v3",
+        "gz_md5": "286781669d083104cc399ae8a561afc5",
+        "gz_origin": "zenodo",
+        "gz_sha256": "2d4bda268708bf2e161735bf77dd7ec503c233b42d4f4ab1abb3090eae6b6755",
+        "rows": 884,
+        "split_counts": {
+          "test": 184,
+          "train": 584,
+          "validation": 116
+        },
+        "target_units": "nm"
+      }
+    },
+    {
+      "archive_member": "rhomax-wavelength-results/panel-receipt.json",
+      "id": "panel-receipt.json:nearest_neighbour_fallbacks",
+      "kind": "historical-evidence",
+      "member_sha256": "ef051925255c9eeda9562c78d3094c8ec0c588fa3ac2d75ea09bbbd43aa68f67",
+      "result_pointer": "nearest_neighbour_fallbacks",
+      "value": 92
+    },
+    {
+      "archive_member": "rhomax-wavelength-results/panel-receipt.json",
+      "id": "panel-receipt.json:total_wall_seconds",
+      "kind": "historical-evidence",
+      "member_sha256": "ef051925255c9eeda9562c78d3094c8ec0c588fa3ac2d75ea09bbbd43aa68f67",
+      "result_pointer": "total_wall_seconds",
+      "value": 49.233460625007865
+    },
+    {
+      "archive_member": "rhomax-wavelength-results/panel-receipt.json",
+      "id": "panel-receipt.json:peak_rss_mb",
+      "kind": "historical-evidence",
+      "member_sha256": "ef051925255c9eeda9562c78d3094c8ec0c588fa3ac2d75ea09bbbd43aa68f67",
+      "result_pointer": "peak_rss_mb",
+      "value": 1457.21875
+    },
+    {
+      "archive_member": "rhomax-wavelength-results/exploratory-analysis.json",
+      "id": "exploratory-analysis.json:grouping",
+      "kind": "historical-evidence",
+      "member_sha256": "d1b692c23c8a2811ff73507e5d3790d9f7245a7b325fc4ce5813a5cc1dc4db00",
+      "result_pointer": "grouping",
+      "value": {
+        "groups": 37,
+        "largest": 30,
+        "provenance": "DECLARED RECONSTRUCTION. The archive publishes no wild-type label.",
+        "rows_in_groups_of_at_least_10": 125,
+        "rule": "equal sequence length and single-linkage Hamming distance <= 10% of length",
+        "singletons": 22
+      }
+    },
+    {
+      "archive_member": "rhomax-wavelength-results/exploratory-analysis.json",
+      "id": "exploratory-analysis.json:paired_bootstrap_vs_training-mean",
+      "kind": "historical-evidence",
+      "member_sha256": "d1b692c23c8a2811ff73507e5d3790d9f7245a7b325fc4ce5813a5cc1dc4db00",
+      "result_pointer": "paired_bootstrap_vs_training-mean",
+      "value": {
+        "composition-22": {
+          "bootstrap_bias_nm": -0.006987835120373431,
+          "ci95_high": -0.05066734723912424,
+          "ci95_low": -0.4529809061007211,
+          "draws": 10000,
+          "fraction_favouring_candidate": 0.994,
+          "groups": 37,
+          "interpretation": "direction resolved but magnitude below the 2 nm reporting threshold, so it is too small to act on",
+          "interval_excludes_zero": true,
+          "largest_group_n": 30,
+          "meets_min_effect": false,
+          "min_effect_nm": 2.0,
+          "observed_delta_mae_nm": -0.2437784483221641,
+          "resampling_unit": "reconstructed background group (declared rule, not an archive label)",
+          "seed": 20261001,
+          "singleton_groups": 22,
+          "supported_difference": false
+        },
+        "composition-40": {
+          "bootstrap_bias_nm": -0.006934336611576164,
+          "ci95_high": -0.050296300984341,
+          "ci95_low": -0.4529802652107168,
+          "draws": 10000,
+          "fraction_favouring_candidate": 0.9941,
+          "groups": 37,
+          "interpretation": "direction resolved but magnitude below the 2 nm reporting threshold, so it is too small to act on",
+          "interval_excludes_zero": true,
+          "largest_group_n": 30,
+          "meets_min_effect": false,
+          "min_effect_nm": 2.0,
+          "observed_delta_mae_nm": -0.24364290663911348,
+          "resampling_unit": "reconstructed background group (declared rule, not an archive label)",
+          "seed": 20261001,
+          "singleton_groups": 22,
+          "supported_difference": false
+        },
+        "esm2-35m": {
+          "bootstrap_bias_nm": 0.18725552095923081,
+          "ci95_high": 9.2481570140719,
+          "ci95_low": 0.8043888160773704,
+          "draws": 10000,
+          "fraction_favouring_candidate": 0.0075,
+          "groups": 37,
+          "interpretation": "supported difference",
+          "interval_excludes_zero": true,
+          "largest_group_n": 30,
+          "meets_min_effect": true,
+          "min_effect_nm": 2.0,
+          "observed_delta_mae_nm": 4.559604993324317,
+          "resampling_unit": "reconstructed background group (declared rule, not an archive label)",
+          "seed": 20261001,
+          "singleton_groups": 22,
+          "supported_difference": true
+        },
+        "esm2-8m": {
+          "bootstrap_bias_nm": 0.20496466536170388,
+          "ci95_high": 11.255397165593749,
+          "ci95_low": -0.5835406546124372,
+          "draws": 10000,
+          "fraction_favouring_candidate": 0.0499,
+          "groups": 37,
+          "interpretation": "no supported difference, which is not evidence of equivalence",
+          "interval_excludes_zero": false,
+          "largest_group_n": 30,
+          "meets_min_effect": true,
+          "min_effect_nm": 2.0,
+          "observed_delta_mae_nm": 4.2956363396247745,
+          "resampling_unit": "reconstructed background group (declared rule, not an archive label)",
+          "seed": 20261001,
+          "singleton_groups": 22,
+          "supported_difference": false
+        },
+        "nearest-train-seq": {
+          "bootstrap_bias_nm": -0.1260501600781887,
+          "ci95_high": 12.211638719239012,
+          "ci95_low": -7.855161561946858,
+          "draws": 10000,
+          "fraction_favouring_candidate": 0.2738,
+          "groups": 37,
+          "interpretation": "no supported difference, which is not evidence of equivalence",
+          "interval_excludes_zero": false,
+          "largest_group_n": 30,
+          "meets_min_effect": true,
+          "min_effect_nm": 2.0,
+          "observed_delta_mae_nm": 2.8956968433591364,
+          "resampling_unit": "reconstructed background group (declared rule, not an archive label)",
+          "seed": 20261001,
+          "singleton_groups": 22,
+          "supported_difference": false
+        }
+      }
+    },
+    {
+      "archive_member": "rhomax-wavelength-results/exploratory-analysis.json",
+      "id": "exploratory-analysis.json:distance_bins",
+      "kind": "historical-evidence",
+      "member_sha256": "d1b692c23c8a2811ff73507e5d3790d9f7245a7b325fc4ce5813a5cc1dc4db00",
+      "result_pointer": "distance_bins",
+      "value": [
+        {
+          "bin": "near",
+          "evidence_status": "descriptive only; no paired interval was computed within bins",
+          "mae_nm": {
+            "composition-22": 15.110815942276577,
+            "composition-40": 15.111719375740927,
+            "esm2-35m": 16.288948412172545,
+            "esm2-8m": 13.487403347950135,
+            "nearest-train-seq": 6.6,
+            "training-mean": 16.160273972602727
+          },
+          "meets_min_bin_size": false,
+          "min_bin_size": 10,
+          "n": 5,
+          "target_nm": {
+            "max": 560.0,
+            "mean": 549.2,
+            "min": 523.0
+          }
+        },
+        {
+          "bin": "mid",
+          "evidence_status": "descriptive only; no paired interval was computed within bins",
+          "mae_nm": {},
+          "meets_min_bin_size": false,
+          "min_bin_size": 10,
+          "n": 0
+        },
+        {
+          "bin": "far",
+          "evidence_status": "descriptive only; no paired interval was computed within bins",
+          "mae_nm": {
+            "composition-22": 24.467090038455332,
+            "composition-40": 24.46687315966924,
+            "esm2-35m": 26.38045322864816,
+            "esm2-8m": 28.18208742109522,
+            "nearest-train-seq": 31.379310344827587,
+            "training-mean": 24.70563690757361
+          },
+          "meets_min_bin_size": true,
+          "min_bin_size": 10,
+          "n": 87,
+          "target_nm": {
+            "max": 589.0,
+            "mean": 526.5402298850574,
+            "min": 470.0
+          }
+        },
+        {
+          "bin": "no_length_match",
+          "evidence_status": "descriptive only; no paired interval was computed within bins",
+          "mae_nm": {
+            "composition-22": 24.7603679614318,
+            "composition-40": 24.76079503704864,
+            "esm2-35m": 32.49372984585241,
+            "esm2-8m": 30.414331131694826,
+            "nearest-train-seq": 24.965306730196545,
+            "training-mean": 24.965306730196545
+          },
+          "meets_min_bin_size": true,
+          "min_bin_size": 10,
+          "n": 92,
+          "target_nm": {
+            "max": 587.0,
+            "mean": 541.0869565217391,
+            "min": 436.0
+          }
+        }
+      ]
+    },
+    {
+      "archive_member": "rhomax-wavelength-results/exploratory-analysis.json",
+      "id": "exploratory-analysis.json:per_group",
+      "kind": "historical-evidence",
+      "member_sha256": "d1b692c23c8a2811ff73507e5d3790d9f7245a7b325fc4ce5813a5cc1dc4db00",
+      "result_pointer": "per_group",
+      "value": [
+        {
+          "group": "bg01",
+          "mae_nm": {
+            "composition-22": 15.75390990038395,
+            "composition-40": 15.753365430673595,
+            "esm2-35m": 11.904757795240759,
+            "esm2-8m": 12.504662663693376,
+            "nearest-train-seq": 27.8,
+            "training-mean": 15.942009132420102
+          },
+          "n": 30,
+          "target_nm_max": 549.0,
+          "target_nm_mean": 527.0666666666667,
+          "target_nm_min": 492.0
+        },
+        {
+          "group": "bg02",
+          "mae_nm": {
+            "composition-22": 12.23718314853919,
+            "composition-40": 12.236948250466897,
+            "esm2-35m": 19.14911015464622,
+            "esm2-8m": 19.8588677850789,
+            "nearest-train-seq": 11.940892947742256,
+            "training-mean": 11.940892947742256
+          },
+          "n": 27,
+          "target_nm_max": 581.0,
+          "target_nm_mean": 545.6296296296297,
+          "target_nm_min": 522.0
+        },
+        {
+          "group": "bg03",
+          "mae_nm": {
+            "composition-22": 21.13643576481192,
+            "composition-40": 21.135104215393337,
+            "esm2-35m": 19.57069834248585,
+            "esm2-8m": 15.648077017209477,
+            "nearest-train-seq": 21.652471709350788,
+            "training-mean": 21.652471709350788
+          },
+          "n": 23,
+          "target_nm_max": 583.0,
+          "target_nm_mean": 557.9130434782609,
+          "target_nm_min": 513.0
+        },
+        {
+          "group": "bg04",
+          "mae_nm": {
+            "composition-22": 10.197403949998177,
+            "composition-40": 10.19797125587871,
+            "esm2-35m": 13.007006436583305,
+            "esm2-8m": 9.304824772412369,
+            "nearest-train-seq": 41.26315789473684,
+            "training-mean": 10.333453496755581
+          },
+          "n": 19,
+          "target_nm_max": 558.0,
+          "target_nm_mean": 543.3157894736842,
+          "target_nm_min": 525.0
+        },
+        {
+          "group": "bg05",
+          "mae_nm": {
+            "composition-22": 62.628145633148065,
+            "composition-40": 62.62661653523083,
+            "esm2-35m": 75.25983581060395,
+            "esm2-8m": 93.5335850224026,
+            "nearest-train-seq": 23.071428571428573,
+            "training-mean": 62.80430528375736
+          },
+          "n": 14,
+          "target_nm_max": 490.0,
+          "target_nm_mean": 476.92857142857144,
+          "target_nm_min": 470.0
+        },
+        {
+          "group": "bg06",
+          "mae_nm": {
+            "composition-22": 32.05191182340412,
+            "composition-40": 32.05159142468634,
+            "esm2-35m": 51.29533678252073,
+            "esm2-8m": 37.714936420721905,
+            "nearest-train-seq": 32.76712328767121,
+            "training-mean": 32.76712328767121
+          },
+          "n": 12,
+          "target_nm_max": 579.0,
+          "target_nm_mean": 572.5,
+          "target_nm_min": 561.0
+        },
+        {
+          "group": "bg07",
+          "mae_nm": {
+            "composition-22": 29.314254236233424,
+            "composition-40": 29.31208665235569,
+            "esm2-35m": 29.251947476797014,
+            "esm2-8m": 33.80784166345987,
+            "nearest-train-seq": 11.75,
+            "training-mean": 28.98287671232879
+          },
+          "n": 8,
+          "target_nm_max": 526.0,
+          "target_nm_mean": 510.75,
+          "target_nm_min": 489.0
+        },
+        {
+          "group": "bg08",
+          "mae_nm": {
+            "composition-22": 66.57474633333243,
+            "composition-40": 66.58273932142613,
+            "esm2-35m": 87.80052485644873,
+            "esm2-8m": 92.33798196967595,
+            "nearest-train-seq": 66.73287671232879,
+            "training-mean": 66.73287671232879
+          },
+          "n": 5,
+          "target_nm_max": 483.0,
+          "target_nm_mean": 473.0,
+          "target_nm_min": 455.0
+        },
+        {
+          "group": "bg09",
+          "mae_nm": {
+            "composition-22": 43.64030375497109,
+            "composition-40": 43.64392292966013,
+            "esm2-35m": 54.71215414996625,
+            "esm2-8m": 43.266256373545595,
+            "nearest-train-seq": 83.8,
+            "training-mean": 44.06712328767121
+          },
+          "n": 5,
+          "target_nm_max": 589.0,
+          "target_nm_mean": 583.8,
+          "target_nm_min": 574.0
+        },
+        {
+          "group": "bg10",
+          "mae_nm": {
+            "composition-22": 5.356380370632792,
+            "composition-40": 5.359869666827109,
+            "esm2-35m": 25.401343829929942,
+            "esm2-8m": 30.884057883715315,
+            "nearest-train-seq": 5.3664383561643945,
+            "training-mean": 5.3664383561643945
+          },
+          "n": 4,
+          "target_nm_max": 546.0,
+          "target_nm_mean": 537.5,
+          "target_nm_min": 530.0
+        },
+        {
+          "group": "bg11",
+          "mae_nm": {
+            "composition-22": 14.93638448457449,
+            "composition-40": 14.93730421377316,
+            "esm2-35m": 19.210304076072447,
+            "esm2-8m": 14.94778386633294,
+            "nearest-train-seq": 7.75,
+            "training-mean": 16.01712328767121
+          },
+          "n": 4,
+          "target_nm_max": 560.0,
+          "target_nm_mean": 555.75,
+          "target_nm_min": 548.0
+        },
+        {
+          "group": "bg12",
+          "mae_nm": {
+            "composition-22": 18.6604320105057,
+            "composition-40": 18.661539770401152,
+            "esm2-35m": 21.802652003285022,
+            "esm2-8m": 12.896520035423615,
+            "nearest-train-seq": 11.666666666666666,
+            "training-mean": 19.93378995433788
+          },
+          "n": 3,
+          "target_nm_max": 564.0,
+          "target_nm_mean": 559.6666666666666,
+          "target_nm_min": 557.0
+        },
+        {
+          "group": "bg13",
+          "mae_nm": {
+            "composition-22": 4.995011506870583,
+            "composition-40": 4.995421739801865,
+            "esm2-35m": 7.245793646593484,
+            "esm2-8m": 6.101280817564354,
+            "nearest-train-seq": 46.0,
+            "training-mean": 6.267123287671211
+          },
+          "n": 3,
+          "target_nm_max": 549.0,
+          "target_nm_mean": 546.0,
+          "target_nm_min": 541.0
+        },
+        {
+          "group": "bg14",
+          "mae_nm": {
+            "composition-22": 45.944059303403414,
+            "composition-40": 45.95273434191381,
+            "esm2-35m": 61.345146960339434,
+            "esm2-8m": 61.938993502572465,
+            "nearest-train-seq": 46.39954337899545,
+            "training-mean": 46.39954337899545
+          },
+          "n": 3,
+          "target_nm_max": 510.0,
+          "target_nm_mean": 493.3333333333333,
+          "target_nm_min": 475.0
+        },
+        {
+          "group": "bg15",
+          "mae_nm": {
+            "composition-22": 10.054913437181028,
+            "composition-40": 10.057942777926883,
+            "esm2-35m": 14.165187109068142,
+            "esm2-8m": 5.070067030093526,
+            "nearest-train-seq": 10.732876712328789,
+            "training-mean": 10.732876712328789
+          },
+          "n": 2,
+          "target_nm_max": 532.0,
+          "target_nm_mean": 529.0,
+          "target_nm_min": 526.0
+        },
+        {
+          "group": "bg16",
+          "mae_nm": {
+            "composition-22": 47.44169290847549,
+            "composition-40": 47.434179370885204,
+            "esm2-35m": 24.06200880849167,
+            "esm2-8m": 8.015912173768243,
+            "nearest-train-seq": 47.26712328767121,
+            "training-mean": 47.26712328767121
+          },
+          "n": 1,
+          "target_nm_max": 587.0,
+          "target_nm_mean": 587.0,
+          "target_nm_min": 587.0
+        },
+        {
+          "group": "bg17",
+          "mae_nm": {
+            "composition-22": 44.46027006405575,
+            "composition-40": 44.46564366208884,
+            "esm2-35m": 69.17937661189796,
+            "esm2-8m": 68.73029292144952,
+            "nearest-train-seq": 44.73287671232879,
+            "training-mean": 44.73287671232879
+          },
+          "n": 1,
+          "target_nm_max": 495.0,
+          "target_nm_mean": 495.0,
+          "target_nm_min": 495.0
+        },
+        {
+          "group": "bg18",
+          "mae_nm": {
+            "composition-22": 86.31529783969438,
+            "composition-40": 86.3101137092151,
+            "esm2-35m": 106.6110821651422,
+            "esm2-8m": 109.30418806257114,
+            "nearest-train-seq": 86.73287671232879,
+            "training-mean": 86.73287671232879
+          },
+          "n": 1,
+          "target_nm_max": 453.0,
+          "target_nm_mean": 453.0,
+          "target_nm_min": 453.0
+        },
+        {
+          "group": "bg19",
+          "mae_nm": {
+            "composition-22": 8.819817542882788,
+            "composition-40": 8.827289479146543,
+            "esm2-35m": 40.2274066344653,
+            "esm2-8m": 41.11946478019627,
+            "nearest-train-seq": 8.732876712328789,
+            "training-mean": 8.732876712328789
+          },
+          "n": 1,
+          "target_nm_max": 531.0,
+          "target_nm_mean": 531.0,
+          "target_nm_min": 531.0
+        },
+        {
+          "group": "bg20",
+          "mae_nm": {
+            "composition-22": 15.808541773084926,
+            "composition-40": 15.809380023611993,
+            "esm2-35m": 4.603525756572935,
+            "esm2-8m": 7.645881274418912,
+            "nearest-train-seq": 2.0,
+            "training-mean": 16.73287671232879
+          },
+          "n": 1,
+          "target_nm_max": 523.0,
+          "target_nm_mean": 523.0,
+          "target_nm_min": 523.0
+        },
+        {
+          "group": "bg21",
+          "mae_nm": {
+            "composition-22": 5.086681759335647,
+            "composition-40": 5.082769296222523,
+            "esm2-35m": 3.9540151995365704,
+            "esm2-8m": 5.057743160492464,
+            "nearest-train-seq": 4.732876712328789,
+            "training-mean": 4.732876712328789
+          },
+          "n": 1,
+          "target_nm_max": 535.0,
+          "target_nm_mean": 535.0,
+          "target_nm_min": 535.0
+        },
+        {
+          "group": "bg22",
+          "mae_nm": {
+            "composition-22": 11.39134843224133,
+            "composition-40": 11.393569174282561,
+            "esm2-35m": 25.838684650918594,
+            "esm2-8m": 22.36458127564822,
+            "nearest-train-seq": 12.267123287671211,
+            "training-mean": 12.267123287671211
+          },
+          "n": 1,
+          "target_nm_max": 552.0,
+          "target_nm_mean": 552.0,
+          "target_nm_min": 552.0
+        },
+        {
+          "group": "bg23",
+          "mae_nm": {
+            "composition-22": 11.629356854362527,
+            "composition-40": 11.631657085561073,
+            "esm2-35m": 9.233023181131102,
+            "esm2-8m": 8.369055946764888,
+            "nearest-train-seq": 12.267123287671211,
+            "training-mean": 12.267123287671211
+          },
+          "n": 1,
+          "target_nm_max": 552.0,
+          "target_nm_mean": 552.0,
+          "target_nm_min": 552.0
+        },
+        {
+          "group": "bg24",
+          "mae_nm": {
+            "composition-22": 37.66247855516667,
+            "composition-40": 37.666423268194194,
+            "esm2-35m": 52.066825397723164,
+            "esm2-8m": 39.89255589212394,
+            "nearest-train-seq": 38.26712328767121,
+            "training-mean": 38.26712328767121
+          },
+          "n": 1,
+          "target_nm_max": 578.0,
+          "target_nm_mean": 578.0,
+          "target_nm_min": 578.0
+        },
+        {
+          "group": "bg25",
+          "mae_nm": {
+            "composition-22": 33.506971001928946,
+            "composition-40": 33.50239735757782,
+            "esm2-35m": 19.95893772202203,
+            "esm2-8m": 30.933057790342787,
+            "nearest-train-seq": 33.73287671232879,
+            "training-mean": 33.73287671232879
+          },
+          "n": 1,
+          "target_nm_max": 506.0,
+          "target_nm_mean": 506.0,
+          "target_nm_min": 506.0
+        },
+        {
+          "group": "bg26",
+          "mae_nm": {
+            "composition-22": 14.050253133763817,
+            "composition-40": 14.051592127169897,
+            "esm2-35m": 20.27360523414211,
+            "esm2-8m": 9.86305374301321,
+            "nearest-train-seq": 55.0,
+            "training-mean": 15.267123287671211
+          },
+          "n": 1,
+          "target_nm_max": 555.0,
+          "target_nm_mean": 555.0,
+          "target_nm_min": 555.0
+        },
+        {
+          "group": "bg27",
+          "mae_nm": {
+            "composition-22": 19.060823685484024,
+            "composition-40": 19.0616208725653,
+            "esm2-35m": 8.382005508128714,
+            "esm2-8m": 8.165585870748941,
+            "nearest-train-seq": 11.0,
+            "training-mean": 19.73287671232879
+          },
+          "n": 1,
+          "target_nm_max": 520.0,
+          "target_nm_mean": 520.0,
+          "target_nm_min": 520.0
+        },
+        {
+          "group": "bg28",
+          "mae_nm": {
+            "composition-22": 1.851039746641959,
+            "composition-40": 1.8467657350944364,
+            "esm2-35m": 16.36461201871532,
+            "esm2-8m": 10.763945749106028,
+            "nearest-train-seq": 2.267123287671211,
+            "training-mean": 2.267123287671211
+          },
+          "n": 1,
+          "target_nm_max": 542.0,
+          "target_nm_mean": 542.0,
+          "target_nm_min": 542.0
+        },
+        {
+          "group": "bg29",
+          "mae_nm": {
+            "composition-22": 55.255656344100544,
+            "composition-40": 55.252931891347544,
+            "esm2-35m": 36.630757443219295,
+            "esm2-8m": 46.50291775810058,
+            "nearest-train-seq": 54.73287671232879,
+            "training-mean": 54.73287671232879
+          },
+          "n": 1,
+          "target_nm_max": 485.0,
+          "target_nm_mean": 485.0,
+          "target_nm_min": 485.0
+        },
+        {
+          "group": "bg30",
+          "mae_nm": {
+            "composition-22": 14.179068300420681,
+            "composition-40": 14.176307060896193,
+            "esm2-35m": 1.2267516511892609,
+            "esm2-8m": 1.1024076375352934,
+            "nearest-train-seq": 14.732876712328789,
+            "training-mean": 14.732876712328789
+          },
+          "n": 1,
+          "target_nm_max": 525.0,
+          "target_nm_mean": 525.0,
+          "target_nm_min": 525.0
+        },
+        {
+          "group": "bg31",
+          "mae_nm": {
+            "composition-22": 6.524497256613472,
+            "composition-40": 6.5278993189878065,
+            "esm2-35m": 14.04415049976592,
+            "esm2-8m": 15.531202878274598,
+            "nearest-train-seq": 5.732876712328789,
+            "training-mean": 5.732876712328789
+          },
+          "n": 1,
+          "target_nm_max": 534.0,
+          "target_nm_mean": 534.0,
+          "target_nm_min": 534.0
+        },
+        {
+          "group": "bg32",
+          "mae_nm": {
+            "composition-22": 4.84706229481435,
+            "composition-40": 4.843271076948099,
+            "esm2-35m": 13.644649386004176,
+            "esm2-8m": 19.74091565326978,
+            "nearest-train-seq": 2.0,
+            "training-mean": 5.267123287671211
+          },
+          "n": 1,
+          "target_nm_max": 545.0,
+          "target_nm_mean": 545.0,
+          "target_nm_min": 545.0
+        },
+        {
+          "group": "bg33",
+          "mae_nm": {
+            "composition-22": 1.404971536496646,
+            "composition-40": 1.4081686118942116,
+            "esm2-35m": 12.787447441889412,
+            "esm2-8m": 1.3507948520057198,
+            "nearest-train-seq": 1.732876712328789,
+            "training-mean": 1.732876712328789
+          },
+          "n": 1,
+          "target_nm_max": 538.0,
+          "target_nm_mean": 538.0,
+          "target_nm_min": 538.0
+        },
+        {
+          "group": "bg34",
+          "mae_nm": {
+            "composition-22": 95.48513823738972,
+            "composition-40": 95.47995662489177,
+            "esm2-35m": 107.76705345693892,
+            "esm2-8m": 124.06994118085925,
+            "nearest-train-seq": 95.73287671232879,
+            "training-mean": 95.73287671232879
+          },
+          "n": 1,
+          "target_nm_max": 444.0,
+          "target_nm_mean": 444.0,
+          "target_nm_min": 444.0
+        },
+        {
+          "group": "bg35",
+          "mae_nm": {
+            "composition-22": 103.533398656072,
+            "composition-40": 103.53571109326583,
+            "esm2-35m": 113.80112079138542,
+            "esm2-8m": 135.15270746392855,
+            "nearest-train-seq": 103.73287671232879,
+            "training-mean": 103.73287671232879
+          },
+          "n": 1,
+          "target_nm_max": 436.0,
+          "target_nm_mean": 436.0,
+          "target_nm_min": 436.0
+        },
+        {
+          "group": "bg36",
+          "mae_nm": {
+            "composition-22": 12.618630083490302,
+            "composition-40": 12.618301285537086,
+            "esm2-35m": 0.030678413916575664,
+            "esm2-8m": 4.348739519568539,
+            "nearest-train-seq": 21.0,
+            "training-mean": 12.732876712328789
+          },
+          "n": 1,
+          "target_nm_max": 527.0,
+          "target_nm_mean": 527.0,
+          "target_nm_min": 527.0
+        },
+        {
+          "group": "bg37",
+          "mae_nm": {
+            "composition-22": 11.216170005652998,
+            "composition-40": 11.220938856112411,
+            "esm2-35m": 0.13324733559477409,
+            "esm2-8m": 4.5341522140403185,
+            "nearest-train-seq": 14.0,
+            "training-mean": 11.732876712328789
+          },
+          "n": 1,
+          "target_nm_max": 528.0,
+          "target_nm_mean": 528.0,
+          "target_nm_min": 528.0
+        }
+      ]
+    },
+    {
+      "archive_member": "rhomax-wavelength-results/exploratory-analysis.json",
+      "id": "exploratory-analysis.json:shortlists",
+      "kind": "historical-evidence",
+      "member_sha256": "d1b692c23c8a2811ff73507e5d3790d9f7245a7b325fc4ce5813a5cc1dc4db00",
+      "result_pointer": "shortlists",
+      "value": {
+        "composition-22": {
+          "band": {
+            "band_nm": [
+              540.0,
+              560.0
+            ],
+            "capacity": 10,
+            "centre_nm": 550.0,
+            "decision": "A_desired_band",
+            "defined": true,
+            "in_band_count": 9,
+            "mean_abs_deviation_from_centre_nm": 6.3,
+            "precision_at_capacity": 0.9,
+            "realised_capacity": 10,
+            "selected": [
+              {
+                "csv_row": 7,
+                "measured_nm": 548.0,
+                "predicted_nm": 541.0395972086303,
+                "seq_id": "428271ed27bd"
+              },
+              {
+                "csv_row": 4,
+                "measured_nm": 558.0,
+                "predicted_nm": 541.0261379878497,
+                "seq_id": "2a85fc654efe"
+              },
+              {
+                "csv_row": 9,
+                "measured_nm": 541.0,
+                "predicted_nm": 541.0219428054575,
+                "seq_id": "a40194a64772"
+              },
+              {
+                "csv_row": 6,
+                "measured_nm": 557.0,
+                "predicted_nm": 541.0085514862276,
+                "seq_id": "43336364ad95"
+              },
+              {
+                "csv_row": 8,
+                "measured_nm": 549.0,
+                "predicted_nm": 540.9973110762154,
+                "seq_id": "c0c5b99961fd"
+              },
+              {
+                "csv_row": 5,
+                "measured_nm": 564.0,
+                "predicted_nm": 540.9840144944056,
+                "seq_id": "f870767a5adc"
+              },
+              {
+                "csv_row": 524,
+                "measured_nm": 555.0,
+                "predicted_nm": 540.9497468662362,
+                "seq_id": "d571ffe26337"
+              },
+              {
+                "csv_row": 224,
+                "measured_nm": 557.0,
+                "predicted_nm": 540.831498368041,
+                "seq_id": "1937f73b396e"
+              },
+              {
+                "csv_row": 223,
+                "measured_nm": 558.0,
+                "predicted_nm": 540.8225802670904,
+                "seq_id": "78c26b0b585d"
+              },
+              {
+                "csv_row": 226,
+                "measured_nm": 548.0,
+                "predicted_nm": 540.8196050995392,
+                "seq_id": "848b6cf05e5c"
+              }
+            ]
+          },
+          "redshift": {
+            "capacity": 10,
+            "decision": "B_maximise_red_shift",
+            "defined": true,
+            "max_measured_nm": 564.0,
+            "mean_measured_nm": 553.5,
+            "realised_capacity": 10,
+            "selected": [
+              {
+                "csv_row": 7,
+                "measured_nm": 548.0,
+                "predicted_nm": 541.0395972086303,
+                "seq_id": "428271ed27bd"
+              },
+              {
+                "csv_row": 4,
+                "measured_nm": 558.0,
+                "predicted_nm": 541.0261379878497,
+                "seq_id": "2a85fc654efe"
+              },
+              {
+                "csv_row": 9,
+                "measured_nm": 541.0,
+                "predicted_nm": 541.0219428054575,
+                "seq_id": "a40194a64772"
+              },
+              {
+                "csv_row": 6,
+                "measured_nm": 557.0,
+                "predicted_nm": 541.0085514862276,
+                "seq_id": "43336364ad95"
+              },
+              {
+                "csv_row": 8,
+                "measured_nm": 549.0,
+                "predicted_nm": 540.9973110762154,
+                "seq_id": "c0c5b99961fd"
+              },
+              {
+                "csv_row": 5,
+                "measured_nm": 564.0,
+                "predicted_nm": 540.9840144944056,
+                "seq_id": "f870767a5adc"
+              },
+              {
+                "csv_row": 524,
+                "measured_nm": 555.0,
+                "predicted_nm": 540.9497468662362,
+                "seq_id": "d571ffe26337"
+              },
+              {
+                "csv_row": 224,
+                "measured_nm": 557.0,
+                "predicted_nm": 540.831498368041,
+                "seq_id": "1937f73b396e"
+              },
+              {
+                "csv_row": 223,
+                "measured_nm": 558.0,
+                "predicted_nm": 540.8225802670904,
+                "seq_id": "78c26b0b585d"
+              },
+              {
+                "csv_row": 226,
+                "measured_nm": 548.0,
+                "predicted_nm": 540.8196050995392,
+                "seq_id": "848b6cf05e5c"
+              }
+            ]
+          }
+        },
+        "composition-40": {
+          "band": {
+            "band_nm": [
+              540.0,
+              560.0
+            ],
+            "capacity": 10,
+            "centre_nm": 550.0,
+            "decision": "A_desired_band",
+            "defined": true,
+            "in_band_count": 9,
+            "mean_abs_deviation_from_centre_nm": 6.3,
+            "precision_at_capacity": 0.9,
+            "realised_capacity": 10,
+            "selected": [
+              {
+                "csv_row": 7,
+                "measured_nm": 548.0,
+                "predicted_nm": 541.0383654871849,
+                "seq_id": "428271ed27bd"
+              },
+              {
+                "csv_row": 4,
+                "measured_nm": 558.0,
+                "predicted_nm": 541.0250329034482,
+                "seq_id": "2a85fc654efe"
+              },
+              {
+                "csv_row": 9,
+                "measured_nm": 541.0,
+                "predicted_nm": 541.0207065439504,
+                "seq_id": "a40194a64772"
+              },
+              {
+                "csv_row": 6,
+                "measured_nm": 557.0,
+                "predicted_nm": 541.007441879226,
+                "seq_id": "43336364ad95"
+              },
+              {
+                "csv_row": 8,
+                "measured_nm": 549.0,
+                "predicted_nm": 540.9960758373599,
+                "seq_id": "c0c5b99961fd"
+              },
+              {
+                "csv_row": 5,
+                "measured_nm": 564.0,
+                "predicted_nm": 540.9829059061224,
+                "seq_id": "f870767a5adc"
+              },
+              {
+                "csv_row": 524,
+                "measured_nm": 555.0,
+                "predicted_nm": 540.9484078728301,
+                "seq_id": "d571ffe26337"
+              },
+              {
+                "csv_row": 224,
+                "measured_nm": 557.0,
+                "predicted_nm": 540.8305853534456,
+                "seq_id": "1937f73b396e"
+              },
+              {
+                "csv_row": 223,
+                "measured_nm": 558.0,
+                "predicted_nm": 540.8216601430289,
+                "seq_id": "78c26b0b585d"
+              },
+              {
+                "csv_row": 226,
+                "measured_nm": 548.0,
+                "predicted_nm": 540.8186829225974,
+                "seq_id": "848b6cf05e5c"
+              }
+            ]
+          },
+          "redshift": {
+            "capacity": 10,
+            "decision": "B_maximise_red_shift",
+            "defined": true,
+            "max_measured_nm": 564.0,
+            "mean_measured_nm": 553.5,
+            "realised_capacity": 10,
+            "selected": [
+              {
+                "csv_row": 7,
+                "measured_nm": 548.0,
+                "predicted_nm": 541.0383654871849,
+                "seq_id": "428271ed27bd"
+              },
+              {
+                "csv_row": 4,
+                "measured_nm": 558.0,
+                "predicted_nm": 541.0250329034482,
+                "seq_id": "2a85fc654efe"
+              },
+              {
+                "csv_row": 9,
+                "measured_nm": 541.0,
+                "predicted_nm": 541.0207065439504,
+                "seq_id": "a40194a64772"
+              },
+              {
+                "csv_row": 6,
+                "measured_nm": 557.0,
+                "predicted_nm": 541.007441879226,
+                "seq_id": "43336364ad95"
+              },
+              {
+                "csv_row": 8,
+                "measured_nm": 549.0,
+                "predicted_nm": 540.9960758373599,
+                "seq_id": "c0c5b99961fd"
+              },
+              {
+                "csv_row": 5,
+                "measured_nm": 564.0,
+                "predicted_nm": 540.9829059061224,
+                "seq_id": "f870767a5adc"
+              },
+              {
+                "csv_row": 524,
+                "measured_nm": 555.0,
+                "predicted_nm": 540.9484078728301,
+                "seq_id": "d571ffe26337"
+              },
+              {
+                "csv_row": 224,
+                "measured_nm": 557.0,
+                "predicted_nm": 540.8305853534456,
+                "seq_id": "1937f73b396e"
+              },
+              {
+                "csv_row": 223,
+                "measured_nm": 558.0,
+                "predicted_nm": 540.8216601430289,
+                "seq_id": "78c26b0b585d"
+              },
+              {
+                "csv_row": 226,
+                "measured_nm": 548.0,
+                "predicted_nm": 540.8186829225974,
+                "seq_id": "848b6cf05e5c"
+              }
+            ]
+          }
+        },
+        "esm2-35m": {
+          "band": {
+            "band_nm": [
+              540.0,
+              560.0
+            ],
+            "capacity": 10,
+            "centre_nm": 550.0,
+            "decision": "A_desired_band",
+            "defined": true,
+            "in_band_count": 0,
+            "mean_abs_deviation_from_centre_nm": 69.8,
+            "precision_at_capacity": 0.0,
+            "realised_capacity": 10,
+            "selected": [
+              {
+                "csv_row": 794,
+                "measured_nm": 436.0,
+                "predicted_nm": 549.8011207913854,
+                "seq_id": "5e4e5b44d203"
+              },
+              {
+                "csv_row": 758,
+                "measured_nm": 538.0,
+                "predicted_nm": 550.7874474418894,
+                "seq_id": "a1596386fd9f"
+              },
+              {
+                "csv_row": 178,
+                "measured_nm": 486.0,
+                "predicted_nm": 551.0360578591425,
+                "seq_id": "5136d1062e9f"
+              },
+              {
+                "csv_row": 181,
+                "measured_nm": 470.0,
+                "predicted_nm": 551.3264874090729,
+                "seq_id": "5a7a3426c7cb"
+              },
+              {
+                "csv_row": 183,
+                "measured_nm": 470.0,
+                "predicted_nm": 551.4700195036309,
+                "seq_id": "f54d3bd1eb25"
+              },
+              {
+                "csv_row": 182,
+                "measured_nm": 474.0,
+                "predicted_nm": 551.5524895333299,
+                "seq_id": "ebb9b31c55c2"
+              },
+              {
+                "csv_row": 772,
+                "measured_nm": 444.0,
+                "predicted_nm": 551.7670534569389,
+                "seq_id": "110ee4bf5fe5"
+              },
+              {
+                "csv_row": 753,
+                "measured_nm": 534.0,
+                "predicted_nm": 548.0441504997659,
+                "seq_id": "a5645bcee97a"
+              },
+              {
+                "csv_row": 175,
+                "measured_nm": 480.0,
+                "predicted_nm": 551.9660463012873,
+                "seq_id": "63b3da48fd60"
+              },
+              {
+                "csv_row": 174,
+                "measured_nm": 470.0,
+                "predicted_nm": 551.9736157289735,
+                "seq_id": "34c536ed1754"
+              }
+            ]
+          },
+          "redshift": {
+            "capacity": 10,
+            "decision": "B_maximise_red_shift",
+            "defined": true,
+            "max_measured_nm": 587.0,
+            "mean_measured_nm": 544.0,
+            "realised_capacity": 10,
+            "selected": [
+              {
+                "csv_row": 223,
+                "measured_nm": 558.0,
+                "predicted_nm": 575.8622974861968,
+                "seq_id": "78c26b0b585d"
+              },
+              {
+                "csv_row": 225,
+                "measured_nm": 560.0,
+                "predicted_nm": 575.384532807718,
+                "seq_id": "c28e8cbcbc78"
+              },
+              {
+                "csv_row": 224,
+                "measured_nm": 557.0,
+                "predicted_nm": 574.3224171715843,
+                "seq_id": "1937f73b396e"
+              },
+              {
+                "csv_row": 226,
+                "measured_nm": 548.0,
+                "predicted_nm": 574.2719688387907,
+                "seq_id": "848b6cf05e5c"
+              },
+              {
+                "csv_row": 169,
+                "measured_nm": 531.0,
+                "predicted_nm": 571.2274066344653,
+                "seq_id": "d85daf280def"
+              },
+              {
+                "csv_row": 167,
+                "measured_nm": 495.0,
+                "predicted_nm": 564.179376611898,
+                "seq_id": "15656dd7a352"
+              },
+              {
+                "csv_row": 163,
+                "measured_nm": 530.0,
+                "predicted_nm": 564.1494271945156,
+                "seq_id": "7c50e58ac04d"
+              },
+              {
+                "csv_row": 160,
+                "measured_nm": 539.0,
+                "predicted_nm": 563.151105907699,
+                "seq_id": "b7134b889b04"
+              },
+              {
+                "csv_row": 166,
+                "measured_nm": 587.0,
+                "predicted_nm": 562.9379911915083,
+                "seq_id": "781ca2b1c04b"
+              },
+              {
+                "csv_row": 162,
+                "measured_nm": 535.0,
+                "predicted_nm": 562.8333612244097,
+                "seq_id": "da2e295fbbfc"
+              }
+            ]
+          }
+        },
+        "esm2-8m": {
+          "band": {
+            "band_nm": [
+              540.0,
+              560.0
+            ],
+            "capacity": 10,
+            "centre_nm": 550.0,
+            "decision": "A_desired_band",
+            "defined": true,
+            "in_band_count": 4,
+            "mean_abs_deviation_from_centre_nm": 23.6,
+            "precision_at_capacity": 0.4,
+            "realised_capacity": 10,
+            "selected": [
+              {
+                "csv_row": 753,
+                "measured_nm": 534.0,
+                "predicted_nm": 549.5312028782746,
+                "seq_id": "a5645bcee97a"
+              },
+              {
+                "csv_row": 789,
+                "measured_nm": 553.0,
+                "predicted_nm": 548.3514970346513,
+                "seq_id": "69f6d08bee87"
+              },
+              {
+                "csv_row": 5,
+                "measured_nm": 564.0,
+                "predicted_nm": 547.4156768756256,
+                "seq_id": "f870767a5adc"
+              },
+              {
+                "csv_row": 651,
+                "measured_nm": 542.0,
+                "predicted_nm": 552.763945749106,
+                "seq_id": "b373e2ae1d8f"
+              },
+              {
+                "csv_row": 53,
+                "measured_nm": 524.0,
+                "predicted_nm": 546.9750252408047,
+                "seq_id": "4640f2a79c88"
+              },
+              {
+                "csv_row": 54,
+                "measured_nm": 489.0,
+                "predicted_nm": 546.6499168054336,
+                "seq_id": "cfae9d16b322"
+              },
+              {
+                "csv_row": 4,
+                "measured_nm": 558.0,
+                "predicted_nm": 546.5356797071563,
+                "seq_id": "2a85fc654efe"
+              },
+              {
+                "csv_row": 6,
+                "measured_nm": 557.0,
+                "predicted_nm": 546.3590833109472,
+                "seq_id": "43336364ad95"
+              },
+              {
+                "csv_row": 50,
+                "measured_nm": 490.0,
+                "predicted_nm": 546.3104444434418,
+                "seq_id": "e01c625f3a99"
+              },
+              {
+                "csv_row": 55,
+                "measured_nm": 517.0,
+                "predicted_nm": 545.8088683176245,
+                "seq_id": "b06fb421c592"
+              }
+            ]
+          },
+          "redshift": {
+            "capacity": 10,
+            "decision": "B_maximise_red_shift",
+            "defined": true,
+            "max_measured_nm": 587.0,
+            "mean_measured_nm": 506.2,
+            "realised_capacity": 10,
+            "selected": [
+              {
+                "csv_row": 166,
+                "measured_nm": 587.0,
+                "predicted_nm": 578.9840878262318,
+                "seq_id": "781ca2b1c04b"
+              },
+              {
+                "csv_row": 226,
+                "measured_nm": 548.0,
+                "predicted_nm": 572.2284877286307,
+                "seq_id": "848b6cf05e5c"
+              },
+              {
+                "csv_row": 169,
+                "measured_nm": 531.0,
+                "predicted_nm": 572.1194647801963,
+                "seq_id": "d85daf280def"
+              },
+              {
+                "csv_row": 177,
+                "measured_nm": 470.0,
+                "predicted_nm": 571.3366148760621,
+                "seq_id": "3c056f233ab0"
+              },
+              {
+                "csv_row": 794,
+                "measured_nm": 436.0,
+                "predicted_nm": 571.1527074639286,
+                "seq_id": "5e4e5b44d203"
+              },
+              {
+                "csv_row": 179,
+                "measured_nm": 490.0,
+                "predicted_nm": 570.9402551125254,
+                "seq_id": "0adee8d3b78e"
+              },
+              {
+                "csv_row": 170,
+                "measured_nm": 480.0,
+                "predicted_nm": 570.8746036043789,
+                "seq_id": "cb5d5f36822c"
+              },
+              {
+                "csv_row": 173,
+                "measured_nm": 480.0,
+                "predicted_nm": 570.8572064578598,
+                "seq_id": "870b2a76e813"
+              },
+              {
+                "csv_row": 225,
+                "measured_nm": 560.0,
+                "predicted_nm": 570.7580475653806,
+                "seq_id": "c28e8cbcbc78"
+              },
+              {
+                "csv_row": 172,
+                "measured_nm": 480.0,
+                "predicted_nm": 570.6689937392782,
+                "seq_id": "1e4180aaee76"
+              }
+            ]
+          }
+        },
+        "nearest-train-seq": {
+          "band": {
+            "band_nm": [
+              540.0,
+              560.0
+            ],
+            "capacity": 10,
+            "centre_nm": 550.0,
+            "decision": "A_desired_band",
+            "defined": true,
+            "in_band_count": 6,
+            "mean_abs_deviation_from_centre_nm": 17.4,
+            "precision_at_capacity": 0.6,
+            "realised_capacity": 10,
+            "selected": [
+              {
+                "csv_row": 223,
+                "measured_nm": 558.0,
+                "predicted_nm": 551.0,
+                "seq_id": "78c26b0b585d"
+              },
+              {
+                "csv_row": 224,
+                "measured_nm": 557.0,
+                "predicted_nm": 551.0,
+                "seq_id": "1937f73b396e"
+              },
+              {
+                "csv_row": 226,
+                "measured_nm": 548.0,
+                "predicted_nm": 551.0,
+                "seq_id": "848b6cf05e5c"
+              },
+              {
+                "csv_row": 4,
+                "measured_nm": 558.0,
+                "predicted_nm": 548.0,
+                "seq_id": "2a85fc654efe"
+              },
+              {
+                "csv_row": 5,
+                "measured_nm": 564.0,
+                "predicted_nm": 548.0,
+                "seq_id": "f870767a5adc"
+              },
+              {
+                "csv_row": 6,
+                "measured_nm": 557.0,
+                "predicted_nm": 548.0,
+                "seq_id": "43336364ad95"
+              },
+              {
+                "csv_row": 876,
+                "measured_nm": 527.0,
+                "predicted_nm": 548.0,
+                "seq_id": "6cf2a2f7a9d9"
+              },
+              {
+                "csv_row": 757,
+                "measured_nm": 545.0,
+                "predicted_nm": 543.0,
+                "seq_id": "5e78f02732f6"
+              },
+              {
+                "csv_row": 883,
+                "measured_nm": 528.0,
+                "predicted_nm": 542.0,
+                "seq_id": "cf9d5e9138cd"
+              },
+              {
+                "csv_row": 155,
+                "measured_nm": 472.0,
+                "predicted_nm": 539.7328767123288,
+                "seq_id": "8676c558abb3"
+              }
+            ]
+          },
+          "redshift": {
+            "capacity": 10,
+            "decision": "B_maximise_red_shift",
+            "defined": true,
+            "max_measured_nm": 564.0,
+            "mean_measured_nm": 550.2,
+            "realised_capacity": 10,
+            "selected": [
+              {
+                "csv_row": 225,
+                "measured_nm": 560.0,
+                "predicted_nm": 575.0,
+                "seq_id": "c28e8cbcbc78"
+              },
+              {
+                "csv_row": 223,
+                "measured_nm": 558.0,
+                "predicted_nm": 551.0,
+                "seq_id": "78c26b0b585d"
+              },
+              {
+                "csv_row": 224,
+                "measured_nm": 557.0,
+                "predicted_nm": 551.0,
+                "seq_id": "1937f73b396e"
+              },
+              {
+                "csv_row": 226,
+                "measured_nm": 548.0,
+                "predicted_nm": 551.0,
+                "seq_id": "848b6cf05e5c"
+              },
+              {
+                "csv_row": 4,
+                "measured_nm": 558.0,
+                "predicted_nm": 548.0,
+                "seq_id": "2a85fc654efe"
+              },
+              {
+                "csv_row": 5,
+                "measured_nm": 564.0,
+                "predicted_nm": 548.0,
+                "seq_id": "f870767a5adc"
+              },
+              {
+                "csv_row": 6,
+                "measured_nm": 557.0,
+                "predicted_nm": 548.0,
+                "seq_id": "43336364ad95"
+              },
+              {
+                "csv_row": 876,
+                "measured_nm": 527.0,
+                "predicted_nm": 548.0,
+                "seq_id": "6cf2a2f7a9d9"
+              },
+              {
+                "csv_row": 757,
+                "measured_nm": 545.0,
+                "predicted_nm": 543.0,
+                "seq_id": "5e78f02732f6"
+              },
+              {
+                "csv_row": 883,
+                "measured_nm": 528.0,
+                "predicted_nm": 542.0,
+                "seq_id": "cf9d5e9138cd"
+              }
+            ]
+          }
+        },
+        "training-mean": {
+          "band": {
+            "decision": "A_desired_band",
+            "defined": false,
+            "reason": "constant predictor: every row ties, so no shortlist is defined"
+          },
+          "redshift": {
+            "decision": "B_maximise_red_shift",
+            "defined": false,
+            "reason": "constant predictor: every row ties, so no shortlist is defined"
+          }
+        }
+      }
+    },
+    {
+      "archive_member": "rhomax-wavelength-results/exploratory-analysis.json",
+      "id": "exploratory-analysis.json:random_reference",
+      "kind": "historical-evidence",
+      "member_sha256": "d1b692c23c8a2811ff73507e5d3790d9f7245a7b325fc4ce5813a5cc1dc4db00",
+      "result_pointer": "random_reference",
+      "value": {
+        "band_prevalence_count": 57,
+        "capacity": 10,
+        "expected_mean_abs_deviation_from_centre_nm": 26.309782608695652,
+        "expected_mean_measured_nm": 534.429347826087,
+        "expected_precision_at_capacity": 0.30978260869565216,
+        "population_n": 184,
+        "reference": "uniform random selection, analytic expectation"
+      }
+    },
+    {
+      "archive_member": "rhomax-wavelength-results/exploratory-analysis.json",
+      "id": "exploratory-analysis.json:post_hoc",
+      "kind": "historical-evidence",
+      "member_sha256": "d1b692c23c8a2811ff73507e5d3790d9f7245a7b325fc4ce5813a5cc1dc4db00",
+      "result_pointer": "post_hoc",
+      "value": {
+        "shortlist_spread": {
+          "composition-22": {
+            "band_precision_ci95": [
+              0.3333333333333333,
+              1.0
+            ],
+            "caveat": "Resampling whole reconstructed groups changes which backgrounds are present, so these intervals mix sampling noise with background composition. They describe spread, not a test.",
+            "defined": true,
+            "draws": 10000,
+            "groups": 37,
+            "observed_band_precision": 0.9,
+            "observed_redshift_mean_nm": 553.5,
+            "post_hoc_not_predeclared": true,
+            "realised_capacity": {
+              "list_fraction": 0.05435,
+              "max": 21,
+              "mean": 10.0343,
+              "min": 3,
+              "requested": 10
+            },
+            "redshift_mean_ci95_nm": [
+              546.0,
+              560.5717261904762
+            ],
+            "resampling_unit": "reconstructed background group (declared rule, not an archive label)",
+            "seed": 20261001,
+            "skipped_draws": 0,
+            "usable_draws": 10000
+          },
+          "composition-40": {
+            "band_precision_ci95": [
+              0.3333333333333333,
+              1.0
+            ],
+            "caveat": "Resampling whole reconstructed groups changes which backgrounds are present, so these intervals mix sampling noise with background composition. They describe spread, not a test.",
+            "defined": true,
+            "draws": 10000,
+            "groups": 37,
+            "observed_band_precision": 0.9,
+            "observed_redshift_mean_nm": 553.5,
+            "post_hoc_not_predeclared": true,
+            "realised_capacity": {
+              "list_fraction": 0.05435,
+              "max": 21,
+              "mean": 10.0343,
+              "min": 3,
+              "requested": 10
+            },
+            "redshift_mean_ci95_nm": [
+              546.0,
+              560.5717261904762
+            ],
+            "resampling_unit": "reconstructed background group (declared rule, not an archive label)",
+            "seed": 20261001,
+            "skipped_draws": 0,
+            "usable_draws": 10000
+          },
+          "esm2-35m": {
+            "band_precision_ci95": [
+              0.0,
+              0.2
+            ],
+            "caveat": "Resampling whole reconstructed groups changes which backgrounds are present, so these intervals mix sampling noise with background composition. They describe spread, not a test.",
+            "defined": true,
+            "draws": 10000,
+            "groups": 37,
+            "observed_band_precision": 0.0,
+            "observed_redshift_mean_nm": 544.0,
+            "post_hoc_not_predeclared": true,
+            "realised_capacity": {
+              "list_fraction": 0.05435,
+              "max": 21,
+              "mean": 10.0343,
+              "min": 3,
+              "requested": 10
+            },
+            "redshift_mean_ci95_nm": [
+              489.54515151515153,
+              558.6
+            ],
+            "resampling_unit": "reconstructed background group (declared rule, not an archive label)",
+            "seed": 20261001,
+            "skipped_draws": 0,
+            "usable_draws": 10000
+          },
+          "esm2-8m": {
+            "band_precision_ci95": [
+              0.0,
+              0.875
+            ],
+            "caveat": "Resampling whole reconstructed groups changes which backgrounds are present, so these intervals mix sampling noise with background composition. They describe spread, not a test.",
+            "defined": true,
+            "draws": 10000,
+            "groups": 37,
+            "observed_band_precision": 0.4,
+            "observed_redshift_mean_nm": 506.2,
+            "post_hoc_not_predeclared": true,
+            "realised_capacity": {
+              "list_fraction": 0.05435,
+              "max": 21,
+              "mean": 10.0343,
+              "min": 3,
+              "requested": 10
+            },
+            "redshift_mean_ci95_nm": [
+              474.6666666666667,
+              556.8
+            ],
+            "resampling_unit": "reconstructed background group (declared rule, not an archive label)",
+            "seed": 20261001,
+            "skipped_draws": 0,
+            "usable_draws": 10000
+          },
+          "nearest-train-seq": {
+            "band_precision_ci95": [
+              0.09090909090909091,
+              1.0
+            ],
+            "caveat": "Resampling whole reconstructed groups changes which backgrounds are present, so these intervals mix sampling noise with background composition. They describe spread, not a test.",
+            "defined": true,
+            "draws": 10000,
+            "groups": 37,
+            "observed_band_precision": 0.6,
+            "observed_redshift_mean_nm": 550.2,
+            "post_hoc_not_predeclared": true,
+            "realised_capacity": {
+              "list_fraction": 0.05435,
+              "max": 21,
+              "mean": 10.0343,
+              "min": 3,
+              "requested": 10
+            },
+            "redshift_mean_ci95_nm": [
+              513.625,
+              560.0
+            ],
+            "resampling_unit": "reconstructed background group (declared rule, not an archive label)",
+            "seed": 20261001,
+            "skipped_draws": 0,
+            "usable_draws": 10000
+          },
+          "training-mean": {
+            "defined": false,
+            "post_hoc_not_predeclared": true,
+            "reason": "constant predictor: no shortlist exists to resample"
+          }
+        },
+        "status": "added after seeing the frozen analyses; not predeclared, not confirmatory",
+        "validation_interval_feasibility": {
+          "composition-22": {
+            "calibration_claim": "NONE",
+            "half_width_nm": 38.08289409885788,
+            "interval_width_nm": 76.16578819771576,
+            "method": "absolute-residual width at the 90th percentile of the 116 unused validation rows",
+            "nominal_coverage": 0.9,
+            "observed_test_coverage": 0.782608695652174,
+            "observed_test_coverage_wilson95": [
+              0.7175611595320601,
+              0.8360972322464779
+            ],
+            "post_hoc_not_predeclared": true,
+            "test_n": 184,
+            "validation_n": 116,
+            "validation_reconstructed_groups": 35,
+            "validation_singleton_groups": 22,
+            "why_no_claim": "Calibration under background shift would need several independent held-out background sets. The archive publishes no background labels and the validation rows are a single held-out set, so this is one observed coverage number on one split, not a guarantee. The historical protocol left these validation labels unused; this check is the only place they are read, and it is reported separately for that reason."
+          },
+          "composition-40": {
+            "calibration_claim": "NONE",
+            "half_width_nm": 38.080181246703205,
+            "interval_width_nm": 76.16036249340641,
+            "method": "absolute-residual width at the 90th percentile of the 116 unused validation rows",
+            "nominal_coverage": 0.9,
+            "observed_test_coverage": 0.782608695652174,
+            "observed_test_coverage_wilson95": [
+              0.7175611595320601,
+              0.8360972322464779
+            ],
+            "post_hoc_not_predeclared": true,
+            "test_n": 184,
+            "validation_n": 116,
+            "validation_reconstructed_groups": 35,
+            "validation_singleton_groups": 22,
+            "why_no_claim": "Calibration under background shift would need several independent held-out background sets. The archive publishes no background labels and the validation rows are a single held-out set, so this is one observed coverage number on one split, not a guarantee. The historical protocol left these validation labels unused; this check is the only place they are read, and it is reported separately for that reason."
+          },
+          "esm2-35m": {
+            "calibration_claim": "NONE",
+            "half_width_nm": 43.387737150542534,
+            "interval_width_nm": 86.77547430108507,
+            "method": "absolute-residual width at the 90th percentile of the 116 unused validation rows",
+            "nominal_coverage": 0.9,
+            "observed_test_coverage": 0.7663043478260869,
+            "observed_test_coverage_wilson95": [
+              0.7000965929012165,
+              0.8216199685824058
+            ],
+            "post_hoc_not_predeclared": true,
+            "test_n": 184,
+            "validation_n": 116,
+            "validation_reconstructed_groups": 35,
+            "validation_singleton_groups": 22,
+            "why_no_claim": "Calibration under background shift would need several independent held-out background sets. The archive publishes no background labels and the validation rows are a single held-out set, so this is one observed coverage number on one split, not a guarantee. The historical protocol left these validation labels unused; this check is the only place they are read, and it is reported separately for that reason."
+          },
+          "esm2-8m": {
+            "calibration_claim": "NONE",
+            "half_width_nm": 47.52136097554455,
+            "interval_width_nm": 95.0427219510891,
+            "method": "absolute-residual width at the 90th percentile of the 116 unused validation rows",
+            "nominal_coverage": 0.9,
+            "observed_test_coverage": 0.8369565217391305,
+            "observed_test_coverage_wilson95": [
+              0.7767910864609038,
+              0.8833400729673533
+            ],
+            "post_hoc_not_predeclared": true,
+            "test_n": 184,
+            "validation_n": 116,
+            "validation_reconstructed_groups": 35,
+            "validation_singleton_groups": 22,
+            "why_no_claim": "Calibration under background shift would need several independent held-out background sets. The archive publishes no background labels and the validation rows are a single held-out set, so this is one observed coverage number on one split, not a guarantee. The historical protocol left these validation labels unused; this check is the only place they are read, and it is reported separately for that reason."
+          },
+          "nearest-train-seq": {
+            "calibration_claim": "NONE",
+            "half_width_nm": 41.73287671232879,
+            "interval_width_nm": 83.46575342465758,
+            "method": "absolute-residual width at the 90th percentile of the 116 unused validation rows",
+            "nominal_coverage": 0.9,
+            "observed_test_coverage": 0.7880434782608695,
+            "observed_test_coverage_wilson95": [
+              0.7234112603361508,
+              0.8408944082073592
+            ],
+            "post_hoc_not_predeclared": true,
+            "test_n": 184,
+            "validation_n": 116,
+            "validation_reconstructed_groups": 35,
+            "validation_singleton_groups": 22,
+            "why_no_claim": "Calibration under background shift would need several independent held-out background sets. The archive publishes no background labels and the validation rows are a single held-out set, so this is one observed coverage number on one split, not a guarantee. The historical protocol left these validation labels unused; this check is the only place they are read, and it is reported separately for that reason."
+          },
+          "training-mean": {
+            "calibration_claim": "NONE",
+            "half_width_nm": 37.73287671232879,
+            "interval_width_nm": 75.46575342465758,
+            "method": "absolute-residual width at the 90th percentile of the 116 unused validation rows",
+            "nominal_coverage": 0.9,
+            "observed_test_coverage": 0.7717391304347826,
+            "observed_test_coverage_wilson95": [
+              0.7059041849760866,
+              0.8264596532725076
+            ],
+            "post_hoc_not_predeclared": true,
+            "test_n": 184,
+            "validation_n": 116,
+            "validation_reconstructed_groups": 35,
+            "validation_singleton_groups": 22,
+            "why_no_claim": "Calibration under background shift would need several independent held-out background sets. The archive publishes no background labels and the validation rows are a single held-out set, so this is one observed coverage number on one split, not a guarantee. The historical protocol left these validation labels unused; this check is the only place they are read, and it is reported separately for that reason."
+          }
+        }
+      }
+    },
+    {
+      "archive_member": "rhomax-wavelength-results/diagnostics.json",
+      "id": "diagnostics.json:prediction_spread",
+      "kind": "historical-evidence",
+      "member_sha256": "ef23c90566fcb2e82eee2f9303ccb5697e1f51b828f49ea8d0858f521d9bcd20",
+      "result_pointer": "prediction_spread",
+      "value": {
+        "measured_range_nm": [
+          436.0,
+          589.0
+        ],
+        "measured_sd_nm": 32.154092917941625,
+        "per_configuration": {
+          "composition-22": {
+            "pearson_r_with_measured": 0.36211005773839705,
+            "prediction_range_nm": [
+              538.8085417730849,
+              541.0395972086303
+            ],
+            "prediction_sd_nm": 0.6482047326380228,
+            "prediction_span_nm": 2.231055435545386,
+            "sd_as_fraction_of_measured": 0.02015932261850036
+          },
+          "composition-40": {
+            "pearson_r_with_measured": 0.3621132199349043,
+            "prediction_range_nm": [
+              538.809380023612,
+              541.0383654871849
+            ],
+            "prediction_sd_nm": 0.6477530885033052,
+            "prediction_span_nm": 2.22898546357294,
+            "sd_as_fraction_of_measured": 0.020145276377610582
+          },
+          "esm2-35m": {
+            "pearson_r_with_measured": -0.34882003095018377,
+            "prediction_range_nm": [
+              518.666429502612,
+              575.8622974861968
+            ],
+            "prediction_sd_nm": 13.658959716523992,
+            "prediction_span_nm": 57.195867983584776,
+            "sd_as_fraction_of_measured": 0.4247969224752238
+          },
+          "esm2-8m": {
+            "pearson_r_with_measured": -0.312049961426887,
+            "prediction_range_nm": [
+              524.2924500050478,
+              578.9840878262318
+            ],
+            "prediction_sd_nm": 15.729685904811454,
+            "prediction_span_nm": 54.69163782118392,
+            "sd_as_fraction_of_measured": 0.4891970034718182
+          },
+          "nearest-train-seq": {
+            "pearson_r_with_measured": 0.2550178164522782,
+            "prediction_range_nm": [
+              500.0,
+              575.0
+            ],
+            "prediction_sd_nm": 19.68595045421224,
+            "prediction_span_nm": 75.0,
+            "sd_as_fraction_of_measured": 0.612237779633575
+          },
+          "training-mean": {
+            "pearson_r_with_measured": null,
+            "prediction_range_nm": [
+              539.7328767123288,
+              539.7328767123288
+            ],
+            "prediction_sd_nm": 1.1399703430832159e-13,
+            "prediction_span_nm": 0.0,
+            "sd_as_fraction_of_measured": 3.5453351024159203e-15
+          }
+        }
+      }
+    },
+    {
+      "archive_member": "rhomax-wavelength-results/diagnostics.json",
+      "id": "diagnostics.json:fixed_alpha_is_not_fixed_regularisation",
+      "kind": "historical-evidence",
+      "member_sha256": "ef23c90566fcb2e82eee2f9303ccb5697e1f51b828f49ea8d0858f521d9bcd20",
+      "result_pointer": "fixed_alpha_is_not_fixed_regularisation",
+      "value": {
+        "alpha": 10.0,
+        "feature_scaling": "none (as archived)",
+        "note": "Ridge shrinkage is governed by feature variance relative to alpha. With alpha fixed and no feature scaling, the same alpha is a far heavier penalty for small-scale composition fractions than for ESM-2 embeddings, so the five configurations do not share a common amount of regularisation.",
+        "per_representation": {
+          "composition-22": {
+            "constant_columns": 1,
+            "dimension": 22,
+            "mean_abs_value": 0.3002818749034463,
+            "total_feature_variance": 0.010570644470760532,
+            "total_variance_over_alpha": 0.0010570644470760532
+          },
+          "composition-40": {
+            "constant_columns": 20,
+            "dimension": 40,
+            "mean_abs_value": 0.025000000000000005,
+            "total_feature_variance": 0.003449523313645141,
+            "total_variance_over_alpha": 0.0003449523313645141
+          },
+          "esm2-35m": {
+            "constant_columns": 0,
+            "dimension": 480,
+            "mean_abs_value": 0.0921236843270856,
+            "total_feature_variance": 0.81755047302384,
+            "total_variance_over_alpha": 0.081755047302384
+          },
+          "esm2-8m": {
+            "constant_columns": 0,
+            "dimension": 320,
+            "mean_abs_value": 0.11936699696644776,
+            "total_feature_variance": 0.7456946729857821,
+            "total_variance_over_alpha": 0.0745694672985782
+          }
+        }
+      }
+    },
+    {
+      "archive_member": "rhomax-wavelength-results/diagnostics.json",
+      "id": "diagnostics.json:chance_level_for_a_red_shifted_hit",
+      "kind": "historical-evidence",
+      "member_sha256": "ef23c90566fcb2e82eee2f9303ccb5697e1f51b828f49ea8d0858f521d9bcd20",
+      "result_pointer": "chance_level_for_a_red_shifted_hit",
+      "value": {
+        "at_least_one_ge_570nm": {
+          "capacity": 10,
+          "population": 184,
+          "probability_under_uniform_random_shortlist": 0.7909573735064306,
+          "rows_at_or_above": 26
+        },
+        "at_least_one_ge_580nm": {
+          "capacity": 10,
+          "population": 184,
+          "probability_under_uniform_random_shortlist": 0.32826124898061326,
+          "rows_at_or_above": 7
+        },
+        "at_least_one_ge_585nm": {
+          "capacity": 10,
+          "population": 184,
+          "probability_under_uniform_random_shortlist": 0.20181964776814798,
+          "rows_at_or_above": 4
+        }
+      }
+    },
+    {
+      "archive_member": "rhomax-wavelength-results/ndcg-finite-reference.json",
+      "id": "ndcg-finite-reference.json:status",
+      "kind": "historical-evidence",
+      "member_sha256": "0086fcef50b5d9c3377fb0e72dac66688ab6ba6273db8b61c1259cd349bc01fe",
+      "result_pointer": "status",
+      "value": "post_hoc_not_predeclared"
+    },
+    {
+      "archive_member": "rhomax-wavelength-results/ndcg-finite-reference.json",
+      "id": "ndcg-finite-reference.json:n_rows",
+      "kind": "historical-evidence",
+      "member_sha256": "0086fcef50b5d9c3377fb0e72dac66688ab6ba6273db8b61c1259cd349bc01fe",
+      "result_pointer": "n_rows",
+      "value": 184
+    },
+    {
+      "archive_member": "rhomax-wavelength-results/ndcg-finite-reference.json",
+      "id": "ndcg-finite-reference.json:relevance",
+      "kind": "historical-evidence",
+      "member_sha256": "0086fcef50b5d9c3377fb0e72dac66688ab6ba6273db8b61c1259cd349bc01fe",
+      "result_pointer": "relevance",
+      "value": "target minus minimum target; linear gain; full ranking; sklearn tie averaging"
+    },
+    {
+      "archive_member": "rhomax-wavelength-results/ndcg-finite-reference.json",
+      "id": "ndcg-finite-reference.json:perfect_ranking",
+      "kind": "historical-evidence",
+      "member_sha256": "0086fcef50b5d9c3377fb0e72dac66688ab6ba6273db8b61c1259cd349bc01fe",
+      "result_pointer": "perfect_ranking",
+      "value": 1.0000000000000002
+    },
+    {
+      "archive_member": "rhomax-wavelength-results/ndcg-finite-reference.json",
+      "id": "ndcg-finite-reference.json:worst_ranking_reverse_order",
+      "kind": "historical-evidence",
+      "member_sha256": "0086fcef50b5d9c3377fb0e72dac66688ab6ba6273db8b61c1259cd349bc01fe",
+      "result_pointer": "worst_ranking_reverse_order",
+      "value": 0.8131433828849776
+    },
+    {
+      "archive_member": "rhomax-wavelength-results/ndcg-finite-reference.json",
+      "id": "ndcg-finite-reference.json:constant_predictor_tie_averaged",
+      "kind": "historical-evidence",
+      "member_sha256": "0086fcef50b5d9c3377fb0e72dac66688ab6ba6273db8b61c1259cd349bc01fe",
+      "result_pointer": "constant_predictor_tie_averaged",
+      "value": 0.9206667522227658
+    },
+    {
+      "archive_member": "rhomax-wavelength-results/ndcg-finite-reference.json",
+      "id": "ndcg-finite-reference.json:random_permutations",
+      "kind": "historical-evidence",
+      "member_sha256": "0086fcef50b5d9c3377fb0e72dac66688ab6ba6273db8b61c1259cd349bc01fe",
+      "result_pointer": "random_permutations",
+      "value": {
+        "draws": 10000,
+        "max": 0.9530349489477518,
+        "mean": 0.9206821631141534,
+        "min": 0.879674181596301,
+        "p2_5": 0.8974552389762835,
+        "p97_5": 0.9402775646991072,
+        "seed": 20261002
+      }
+    },
+    {
+      "archive_member": "rhomax-wavelength-results/ndcg-finite-reference.json",
+      "id": "ndcg-finite-reference.json:panel",
+      "kind": "historical-evidence",
+      "member_sha256": "0086fcef50b5d9c3377fb0e72dac66688ab6ba6273db8b61c1259cd349bc01fe",
+      "result_pointer": "panel",
+      "value": {
+        "composition-22": 0.9548154942827918,
+        "composition-40": 0.954819941821582,
+        "esm2-35m": 0.9072580204736261,
+        "esm2-8m": 0.8964799835636942,
+        "nearest-train-seq": 0.9453458614930982,
+        "training-mean": 0.9206667522227658
+      }
+    },
+    {
+      "archive_member": "rhomax-wavelength-results/device-agreement.json",
+      "id": "device-agreement.json:cpu_embed_seconds",
+      "kind": "historical-evidence",
+      "member_sha256": "fc66c51f3130cb1bd8532632021b74778d417ce1691404d7111c036176b7b7c9",
+      "result_pointer": "cpu_embed_seconds",
+      "value": 0.5480198329987616
+    },
+    {
+      "archive_member": "rhomax-wavelength-results/device-agreement.json",
+      "id": "device-agreement.json:cpu_reference_metrics",
+      "kind": "historical-evidence",
+      "member_sha256": "fc66c51f3130cb1bd8532632021b74778d417ce1691404d7111c036176b7b7c9",
+      "result_pointer": "cpu_reference_metrics",
+      "value": {
+        "mae_nm": 28.898897209189993,
+        "n": 184,
+        "ndcg": 0.8964799835636942,
+        "rmse_nm": 41.2290132851116,
+        "spearman": -0.1463506755340845
+      }
+    },
+    {
+      "archive_member": "rhomax-wavelength-results/device-agreement.json",
+      "id": "device-agreement.json:embedding_max_abs_difference",
+      "kind": "historical-evidence",
+      "member_sha256": "fc66c51f3130cb1bd8532632021b74778d417ce1691404d7111c036176b7b7c9",
+      "result_pointer": "embedding_max_abs_difference",
+      "value": 1.430511474609375e-06
+    },
+    {
+      "archive_member": "rhomax-wavelength-results/device-agreement.json",
+      "id": "device-agreement.json:embedding_mean_abs_difference",
+      "kind": "historical-evidence",
+      "member_sha256": "fc66c51f3130cb1bd8532632021b74778d417ce1691404d7111c036176b7b7c9",
+      "result_pointer": "embedding_mean_abs_difference",
+      "value": 1.7302351437820107e-07
+    },
+    {
+      "archive_member": "rhomax-wavelength-results/device-agreement.json",
+      "id": "device-agreement.json:interpretation",
+      "kind": "historical-evidence",
+      "member_sha256": "fc66c51f3130cb1bd8532632021b74778d417ce1691404d7111c036176b7b7c9",
+      "result_pointer": "interpretation",
+      "value": "Headline numbers in this companion are CPU numbers. MPS is reported only as a device-agreement check. A nonzero maximum difference is expected from float arithmetic; it is reported rather than asserted away."
+    },
+    {
+      "archive_member": "rhomax-wavelength-results/device-agreement.json",
+      "id": "device-agreement.json:model",
+      "kind": "historical-evidence",
+      "member_sha256": "fc66c51f3130cb1bd8532632021b74778d417ce1691404d7111c036176b7b7c9",
+      "result_pointer": "model",
+      "value": "esm2_t6_8M_UR50D"
+    },
+    {
+      "archive_member": "rhomax-wavelength-results/device-agreement.json",
+      "id": "device-agreement.json:mps_embed_seconds",
+      "kind": "historical-evidence",
+      "member_sha256": "fc66c51f3130cb1bd8532632021b74778d417ce1691404d7111c036176b7b7c9",
+      "result_pointer": "mps_embed_seconds",
+      "value": 2.221138625000094
+    },
+    {
+      "archive_member": "rhomax-wavelength-results/device-agreement.json",
+      "id": "device-agreement.json:sequences_compared",
+      "kind": "historical-evidence",
+      "member_sha256": "fc66c51f3130cb1bd8532632021b74778d417ce1691404d7111c036176b7b7c9",
+      "result_pointer": "sequences_compared",
+      "value": 40
+    },
+    {
+      "archive_member": "rhomax-wavelength-results/device-agreement.json",
+      "id": "device-agreement.json:status",
+      "kind": "historical-evidence",
+      "member_sha256": "fc66c51f3130cb1bd8532632021b74778d417ce1691404d7111c036176b7b7c9",
+      "result_pointer": "status",
+      "value": "ran"
+    }
+  ],
+  "interpretations": [
+    {
+      "based_on": [
+        "panel-receipt.json:scores",
+        "exploratory-analysis.json:paired_bootstrap_vs_training-mean"
+      ],
+      "claim": "Composition rank advantage yields little absolute-error gain on this split",
+      "limits": "Fixed configurations; exploratory reconstructed-group intervals; no tuned family comparison"
+    },
+    {
+      "based_on": [
+        "exploratory-analysis.json:shortlists",
+        "exploratory-analysis.json:post_hoc"
+      ],
+      "claim": "Different shortlist objectives produce different selected rows",
+      "limits": "Post-hoc spread intervals; observed test population only"
+    },
+    {
+      "based_on": [
+        "exploratory-analysis.json:post_hoc"
+      ],
+      "claim": "Coverage under independent background shifts is unestablished",
+      "limits": "Single validation/test split; row-level Wilson intervals omit group dependence"
+    }
+  ],
+  "schema_version": 1,
+  "status": "imported historical measurements; not harness-verified"
+}

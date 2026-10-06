@@ -1,0 +1,13 @@
+{
+  "verdict": "pass",
+  "scope": "independent historical manuscript/evidence consistency and visual review",
+  "sha256": {
+    "paper/main.tex": "f08e92173e4fca8269d04d9bd7513c7a189a16019b490597eaba86bde23aa5e2",
+    "paper/build/main.pdf": "30469c6b29615e4ed2be5532cd13b7d0ba07c3023e9c5cd02b76fdb85d9a0e56",
+    "paper/generated/historical-claims.json": "d4c5e7d1f2f44cb563449ca608bba4ed7d8ac58f0ee44b63edc0ae2634b4ca89",
+    "paper/generated/extraction-receipt.json": "edfd1dabb6734d2a7b53b2cc0966cf30a186b8fab7ee3fa4cc99c5af482e73bb"
+  },
+  "claims_verified": 35,
+  "pages_reviewed": 17,
+  "new_scientific_run": false
+}
