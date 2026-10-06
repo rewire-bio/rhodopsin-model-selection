@@ -1,0 +1,57 @@
+direction: down
+
+start: {
+  label: "You have a candidate rhodopsin\nand want its peak wavelength in nm"
+  shape: oval
+}
+
+distance: {
+  label: "Is there a training sequence\nof the same length within\n5% Hamming distance?"
+  shape: diamond
+}
+
+close_match: {
+  label: "Nearest training sequence looked best here:\nMAE 6.60 nm vs a constant's 16.16 nm on these 5 rows.\nDescriptive only, n = 5: a signpost,\nnot a supported recommendation"
+  style.fill: "#d6f3ee"
+}
+
+far: {
+  label: "179 of 184 held-out rows land here:\nno close training sequence"
+  style.fill: "#fdebd3"
+}
+
+decision: {
+  label: "What is the actual decision?"
+  shape: diamond
+}
+
+band: {
+  label: "Hit a desired band, 540 to 560 nm\n\nComposition + fixed ridge put 9 of 10\nin band against 0.31 expected at random.\nPost-hoc interval 0.33 to 1.00"
+  style.fill: "#dce8fb"
+}
+
+estimate: {
+  label: "Estimate the wavelength itself\n\nBest MAE 24.36 nm vs a constant's 24.60 nm:\n-0.24 nm, 95% CI -0.45 to -0.05, too small to act on.\nPost-hoc 90% intervals need about ±38 nm\nand cover only 77% to 84% of test rows"
+  style.fill: "#f2d7d7"
+}
+
+redshift: {
+  label: "Maximise red shift\n\nNone beat chance at the extremes: composition missed all 7 rows\nat or above 580 nm, though its top-10 mean beat random\n(553.5 vs 534.4 nm, post-hoc). ESM-2's 587 nm hit is within\nchance: a random top 10 holds a row >= 580 nm with P = 0.33"
+  style.fill: "#f2d7d7"
+}
+
+avoid: {
+  label: "ESM-2 35M frozen residue mean + fixed alpha-10 ridge\nwas worse than a constant on this split:\nMAE +4.56 nm, 95% CI +0.80 to +9.25\n\n8M: +4.30 nm, CI includes zero, no supported difference\nOne split, one adaptation: not a verdict on ESM-2\nor on fine-tuned models, which were untested"
+  style.fill: "#e8e8e8"
+  style.stroke-dash: 3
+}
+
+start -> distance
+distance -> close_match: "yes, 5 rows"
+distance -> far: "no, 179 rows"
+far -> decision
+decision -> band: "selection"
+decision -> estimate: "estimation"
+decision -> redshift: "extremes"
+estimate -> avoid: "and in particular"
+redshift -> avoid

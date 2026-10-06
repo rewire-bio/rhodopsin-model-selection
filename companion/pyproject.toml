@@ -1,0 +1,24 @@
+[project]
+name = "rhomax-wavelength-panel"
+version = "0.1.0"
+description = "Reproducible model-selection panel for rhodopsin peak absorption wavelength on the FLIP2 Rhomax by_wild_type split."
+requires-python = "==3.11.*"
+dependencies = [
+    "numpy==1.26.4",
+    "pandas==2.3.3",
+    "scikit-learn==1.8.0",
+    "scipy==1.15.3",
+    "torch==2.2.2",
+    "fair-esm==2.0.0",
+    "matplotlib==3.9.2",
+]
+
+[project.scripts]
+rhomax-panel = "rhomax_panel.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/rhomax_panel"]
