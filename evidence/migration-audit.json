@@ -1,0 +1,402 @@
+{
+  "audited_at": "2026-10-06T10:19:13.512055+00:00",
+  "scope": "Every file in original publication import manifest plus every locally hosted asset referenced by the original article. This is preservation verification, not scientific reproduction.",
+  "source_revision": "a2ba98c1463162cc91a6376fcdfc71e0023f0703",
+  "article_text_preserved": true,
+  "link_adjusted_copy": "article/original.md",
+  "exact_original_copy": "article/published-original.md",
+  "files": [
+    {
+      "source_path": "code/rhomax-wavelength-panel/README.md",
+      "destination": "companion/README.md",
+      "bytes": 6118,
+      "sha256": "3363b543e6a6e8e9f0ece0a028ed35ae2e5f43be1cc21e51dbcb652265551227",
+      "byte_identical": true
+    },
+    {
+      "source_path": "code/rhomax-wavelength-panel/notebooks/explore.ipynb",
+      "destination": "companion/notebooks/explore.ipynb",
+      "bytes": 8301,
+      "sha256": "b4815c0dd020417668d5354fa46daf13492818846d33003f3017baac7ac8c0a3",
+      "byte_identical": true
+    },
+    {
+      "source_path": "code/rhomax-wavelength-panel/notebooks/explore.py",
+      "destination": "companion/notebooks/explore.py",
+      "bytes": 5681,
+      "sha256": "1eb75c31f6b74c3fc9b5ba0142294e0eec27c1362a11ee4f07aff37c4af960d3",
+      "byte_identical": true
+    },
+    {
+      "source_path": "code/rhomax-wavelength-panel/pyproject.toml",
+      "destination": "companion/pyproject.toml",
+      "bytes": 598,
+      "sha256": "46f80c1f63a91bd4688a721c4063c421caebd7e9198ec33390a85c7f99067912",
+      "byte_identical": true
+    },
+    {
+      "source_path": "code/rhomax-wavelength-panel/requirements-locked.txt",
+      "destination": "companion/requirements-locked.txt",
+      "bytes": 682,
+      "sha256": "f980aaa3fe072333b3b9ac0b5d3a66b2800ebad236674c9051bd013fa0e5553a",
+      "byte_identical": true
+    },
+    {
+      "source_path": "code/rhomax-wavelength-panel/scripts/device_agreement.py",
+      "destination": "companion/scripts/device_agreement.py",
+      "bytes": 2720,
+      "sha256": "f6c11bf22a79a44c5a658203b599a24e1102ee004f458ad6ef774b2de872fe2d",
+      "byte_identical": true
+    },
+    {
+      "source_path": "code/rhomax-wavelength-panel/scripts/diagnostics.py",
+      "destination": "companion/scripts/diagnostics.py",
+      "bytes": 5135,
+      "sha256": "fa3f0d484ffa05b14ba6ec13dc320a97aafdeda5a45d8e75587015838b1dc899",
+      "byte_identical": true
+    },
+    {
+      "source_path": "code/rhomax-wavelength-panel/scripts/make_charts.py",
+      "destination": "companion/scripts/make_charts.py",
+      "bytes": 14353,
+      "sha256": "dc9035c5a6961e40a71705dcb6df62f76097b744710105e5caf4d678eceb2a9e",
+      "byte_identical": true
+    },
+    {
+      "source_path": "code/rhomax-wavelength-panel/scripts/make_example_fasta.py",
+      "destination": "companion/scripts/make_example_fasta.py",
+      "bytes": 2301,
+      "sha256": "2c52157b6f8b893c343e23a5ae97c067ee7e8a25b1a2af34bbb257ea959c0a80",
+      "byte_identical": true
+    },
+    {
+      "source_path": "code/rhomax-wavelength-panel/scripts/make_notebook.py",
+      "destination": "companion/scripts/make_notebook.py",
+      "bytes": 2798,
+      "sha256": "4cacff47508d9a0e9fd861a1843b9637a8a05849fef34f41c51a63d6d1c582f9",
+      "byte_identical": true
+    },
+    {
+      "source_path": "code/rhomax-wavelength-panel/src/rhomax_panel/__init__.py",
+      "destination": "companion/src/rhomax_panel/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_identical": true
+    },
+    {
+      "source_path": "code/rhomax-wavelength-panel/src/rhomax_panel/analysis.py",
+      "destination": "companion/src/rhomax_panel/analysis.py",
+      "bytes": 12524,
+      "sha256": "03bb856ef3d08510c1d3e18d4b724c345297ec7a868ff125144d3109db9ec8c4",
+      "byte_identical": true
+    },
+    {
+      "source_path": "code/rhomax-wavelength-panel/src/rhomax_panel/cli.py",
+      "destination": "companion/src/rhomax_panel/cli.py",
+      "bytes": 21848,
+      "sha256": "e01d9cfc6d60748bacdee55bf2c9a3f6c314a68ff544ef1b9f759d6b9d476111",
+      "byte_identical": true
+    },
+    {
+      "source_path": "code/rhomax-wavelength-panel/src/rhomax_panel/data.py",
+      "destination": "companion/src/rhomax_panel/data.py",
+      "bytes": 7638,
+      "sha256": "36bf9bf6acddf7998e6ae66b2c02beff74430b1af1e35fda56acf7888d968791",
+      "byte_identical": true
+    },
+    {
+      "source_path": "code/rhomax-wavelength-panel/src/rhomax_panel/features.py",
+      "destination": "companion/src/rhomax_panel/features.py",
+      "bytes": 6057,
+      "sha256": "e8ce1ee9da76421d6f140e7219c04f3e392a4eaf9f198e87bc8f06c633fc5e3f",
+      "byte_identical": true
+    },
+    {
+      "source_path": "code/rhomax-wavelength-panel/src/rhomax_panel/metrics.py",
+      "destination": "companion/src/rhomax_panel/metrics.py",
+      "bytes": 2459,
+      "sha256": "47d18f9771f648227b7d08fe0e39f426de1497cc5b2dc10475aa3f13b888bc4b",
+      "byte_identical": true
+    },
+    {
+      "source_path": "code/rhomax-wavelength-panel/src/rhomax_panel/models.py",
+      "destination": "companion/src/rhomax_panel/models.py",
+      "bytes": 5168,
+      "sha256": "d7b1cb0e11a761e093d07c0632fcbb57a6d90675f7a5e77244b997d30c92b78d",
+      "byte_identical": true
+    },
+    {
+      "source_path": "code/rhomax-wavelength-panel/src/rhomax_panel/posthoc.py",
+      "destination": "companion/src/rhomax_panel/posthoc.py",
+      "bytes": 7299,
+      "sha256": "906eb33ebab24dd15ff176bec8752bfa83811b105c2dcb27f14631274e0e5423",
+      "byte_identical": true
+    },
+    {
+      "source_path": "code/rhomax-wavelength-panel/tests/test_panel.py",
+      "destination": "companion/tests/test_panel.py",
+      "bytes": 19533,
+      "sha256": "b9e6d3a21f12023b53e767ca0a966dd4f104e8e05153f469097558d968372ff5",
+      "byte_identical": true
+    },
+    {
+      "source_path": "posts/the-best-rank-correlation-buys-024-nanometres.md",
+      "destination": "article/published-original.md",
+      "bytes": 55831,
+      "sha256": "bf23480ea2ede02a5375ab6a422a296b74abab95ce46880691d3202ef079278d",
+      "byte_identical": true
+    },
+    {
+      "source_path": "public/downloads/the-best-rank-correlation-buys-024-nanometres/rhomax-wavelength-panel-code.tar.gz",
+      "destination": "downloads/rhomax-wavelength-panel-code.tar.gz",
+      "bytes": 40100,
+      "sha256": "3d66e26a8410f8bcc02f31a58b9776189de71a340f2412596f610fbbc167553e",
+      "byte_identical": true
+    },
+    {
+      "source_path": "public/downloads/the-best-rank-correlation-buys-024-nanometres/rhomax-wavelength-results.tar.gz",
+      "destination": "downloads/rhomax-wavelength-results.tar.gz",
+      "bytes": 38143,
+      "sha256": "29e4b468acd0b969ec73077fb3aafbd43ad76176c569409b85ef6744bf9dfb0b",
+      "byte_identical": true
+    },
+    {
+      "source_path": "public/images/the-best-rank-correlation-buys-024-nanometres/01-decision-path.d2",
+      "destination": "article/assets/01-decision-path.d2",
+      "bytes": 2038,
+      "sha256": "d73ecfd62e790a195a7f0fa4738918ddd3231a0b3b0e9c853a9a70c25d62b73c",
+      "byte_identical": true
+    },
+    {
+      "source_path": "public/images/the-best-rank-correlation-buys-024-nanometres/01-decision-path.svg",
+      "destination": "article/assets/01-decision-path.svg",
+      "bytes": 126190,
+      "sha256": "b521e76611d3d6cd48d8296439fc2f39353366ccf8f9ccef5cc13d7c5983922e",
+      "byte_identical": true
+    },
+    {
+      "source_path": "public/images/the-best-rank-correlation-buys-024-nanometres/01-rank-versus-error.png",
+      "destination": "article/assets/01-rank-versus-error.png",
+      "bytes": 137645,
+      "sha256": "a8042f2bb3140c73f58baf843c1de0aafbec614067f4445b35a0c90cd5e2001e",
+      "byte_identical": true
+    },
+    {
+      "source_path": "public/images/the-best-rank-correlation-buys-024-nanometres/02-prediction-spread.png",
+      "destination": "article/assets/02-prediction-spread.png",
+      "bytes": 210999,
+      "sha256": "7d4eb287516d662c6184cfb5ff53877cae0fd8cee895c6629c3c959ae6472088",
+      "byte_identical": true
+    },
+    {
+      "source_path": "public/images/the-best-rank-correlation-buys-024-nanometres/03-distance-bins.png",
+      "destination": "article/assets/03-distance-bins.png",
+      "bytes": 99918,
+      "sha256": "0af5e6c888dac53be6e9090848ce94b71be953a5940838b5c3ba301a774b6fe5",
+      "byte_identical": true
+    },
+    {
+      "source_path": "public/images/the-best-rank-correlation-buys-024-nanometres/04-two-decisions.png",
+      "destination": "article/assets/04-two-decisions.png",
+      "bytes": 158967,
+      "sha256": "9560223bda0b2d05ad3108ee304a5f8501d6492cae9f434ded69741d05d6e86e",
+      "byte_identical": true
+    }
+  ],
+  "references": [
+    {
+      "original_url": "/downloads/the-best-rank-correlation-buys-024-nanometres/rhomax-wavelength-panel-code.tar.gz",
+      "destination": "downloads/rhomax-wavelength-panel-code.tar.gz"
+    },
+    {
+      "original_url": "/downloads/the-best-rank-correlation-buys-024-nanometres/rhomax-wavelength-results.tar.gz",
+      "destination": "downloads/rhomax-wavelength-results.tar.gz"
+    },
+    {
+      "original_url": "/images/the-best-rank-correlation-buys-024-nanometres/01-decision-path.svg",
+      "destination": "article/assets/01-decision-path.svg"
+    },
+    {
+      "original_url": "/images/the-best-rank-correlation-buys-024-nanometres/01-rank-versus-error.png",
+      "destination": "article/assets/01-rank-versus-error.png"
+    },
+    {
+      "original_url": "/images/the-best-rank-correlation-buys-024-nanometres/02-prediction-spread.png",
+      "destination": "article/assets/02-prediction-spread.png"
+    },
+    {
+      "original_url": "/images/the-best-rank-correlation-buys-024-nanometres/03-distance-bins.png",
+      "destination": "article/assets/03-distance-bins.png"
+    },
+    {
+      "original_url": "/images/the-best-rank-correlation-buys-024-nanometres/04-two-decisions.png",
+      "destination": "article/assets/04-two-decisions.png"
+    }
+  ],
+  "archives": [
+    {
+      "path": "downloads/rhomax-wavelength-panel-code.tar.gz",
+      "sha256": "3d66e26a8410f8bcc02f31a58b9776189de71a340f2412596f610fbbc167553e",
+      "members": [
+        {
+          "path": "rhomax-wavelength-panel/pyproject.toml",
+          "bytes": 598,
+          "sha256": "46f80c1f63a91bd4688a721c4063c421caebd7e9198ec33390a85c7f99067912"
+        },
+        {
+          "path": "rhomax-wavelength-panel/README.md",
+          "bytes": 6118,
+          "sha256": "3363b543e6a6e8e9f0ece0a028ed35ae2e5f43be1cc21e51dbcb652265551227"
+        },
+        {
+          "path": "rhomax-wavelength-panel/requirements-locked.txt",
+          "bytes": 682,
+          "sha256": "f980aaa3fe072333b3b9ac0b5d3a66b2800ebad236674c9051bd013fa0e5553a"
+        },
+        {
+          "path": "rhomax-wavelength-panel/src/rhomax_panel/metrics.py",
+          "bytes": 2459,
+          "sha256": "47d18f9771f648227b7d08fe0e39f426de1497cc5b2dc10475aa3f13b888bc4b"
+        },
+        {
+          "path": "rhomax-wavelength-panel/src/rhomax_panel/analysis.py",
+          "bytes": 12524,
+          "sha256": "03bb856ef3d08510c1d3e18d4b724c345297ec7a868ff125144d3109db9ec8c4"
+        },
+        {
+          "path": "rhomax-wavelength-panel/src/rhomax_panel/models.py",
+          "bytes": 5168,
+          "sha256": "d7b1cb0e11a761e093d07c0632fcbb57a6d90675f7a5e77244b997d30c92b78d"
+        },
+        {
+          "path": "rhomax-wavelength-panel/src/rhomax_panel/__init__.py",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "rhomax-wavelength-panel/src/rhomax_panel/posthoc.py",
+          "bytes": 7299,
+          "sha256": "906eb33ebab24dd15ff176bec8752bfa83811b105c2dcb27f14631274e0e5423"
+        },
+        {
+          "path": "rhomax-wavelength-panel/src/rhomax_panel/features.py",
+          "bytes": 6057,
+          "sha256": "e8ce1ee9da76421d6f140e7219c04f3e392a4eaf9f198e87bc8f06c633fc5e3f"
+        },
+        {
+          "path": "rhomax-wavelength-panel/src/rhomax_panel/cli.py",
+          "bytes": 21848,
+          "sha256": "e01d9cfc6d60748bacdee55bf2c9a3f6c314a68ff544ef1b9f759d6b9d476111"
+        },
+        {
+          "path": "rhomax-wavelength-panel/src/rhomax_panel/data.py",
+          "bytes": 7638,
+          "sha256": "36bf9bf6acddf7998e6ae66b2c02beff74430b1af1e35fda56acf7888d968791"
+        },
+        {
+          "path": "rhomax-wavelength-panel/notebooks/explore.ipynb",
+          "bytes": 8301,
+          "sha256": "b4815c0dd020417668d5354fa46daf13492818846d33003f3017baac7ac8c0a3"
+        },
+        {
+          "path": "rhomax-wavelength-panel/notebooks/explore.py",
+          "bytes": 5681,
+          "sha256": "1eb75c31f6b74c3fc9b5ba0142294e0eec27c1362a11ee4f07aff37c4af960d3"
+        },
+        {
+          "path": "rhomax-wavelength-panel/scripts/diagnostics.py",
+          "bytes": 5135,
+          "sha256": "fa3f0d484ffa05b14ba6ec13dc320a97aafdeda5a45d8e75587015838b1dc899"
+        },
+        {
+          "path": "rhomax-wavelength-panel/scripts/device_agreement.py",
+          "bytes": 2720,
+          "sha256": "f6c11bf22a79a44c5a658203b599a24e1102ee004f458ad6ef774b2de872fe2d"
+        },
+        {
+          "path": "rhomax-wavelength-panel/scripts/make_charts.py",
+          "bytes": 14353,
+          "sha256": "dc9035c5a6961e40a71705dcb6df62f76097b744710105e5caf4d678eceb2a9e"
+        },
+        {
+          "path": "rhomax-wavelength-panel/scripts/make_example_fasta.py",
+          "bytes": 2301,
+          "sha256": "2c52157b6f8b893c343e23a5ae97c067ee7e8a25b1a2af34bbb257ea959c0a80"
+        },
+        {
+          "path": "rhomax-wavelength-panel/scripts/make_notebook.py",
+          "bytes": 2798,
+          "sha256": "4cacff47508d9a0e9fd861a1843b9637a8a05849fef34f41c51a63d6d1c582f9"
+        },
+        {
+          "path": "rhomax-wavelength-panel/tests/test_panel.py",
+          "bytes": 19533,
+          "sha256": "b9e6d3a21f12023b53e767ca0a966dd4f104e8e05153f469097558d968372ff5"
+        }
+      ]
+    },
+    {
+      "path": "downloads/rhomax-wavelength-results.tar.gz",
+      "sha256": "29e4b468acd0b969ec73077fb3aafbd43ad76176c569409b85ef6744bf9dfb0b",
+      "members": [
+        {
+          "path": "rhomax-wavelength-results/source-ledger.md",
+          "bytes": 8765,
+          "sha256": "194b77753488a5382d8ed520b04eb8ca4c7fe6fa5adbb25635ab08326f330e2b"
+        },
+        {
+          "path": "rhomax-wavelength-results/panel-receipt.json",
+          "bytes": 8150,
+          "sha256": "ef051925255c9eeda9562c78d3094c8ec0c588fa3ac2d75ea09bbbd43aa68f67"
+        },
+        {
+          "path": "rhomax-wavelength-results/device-agreement.json",
+          "bytes": 696,
+          "sha256": "fc66c51f3130cb1bd8532632021b74778d417ce1691404d7111c036176b7b7c9"
+        },
+        {
+          "path": "rhomax-wavelength-results/exploratory-analysis.json",
+          "bytes": 55301,
+          "sha256": "d1b692c23c8a2811ff73507e5d3790d9f7245a7b325fc4ce5813a5cc1dc4db00"
+        },
+        {
+          "path": "rhomax-wavelength-results/example-predictions.json",
+          "bytes": 2422,
+          "sha256": "2423cb323413c7b4188317da429cd55ad4fc3afd65d71df42c49e88ebe4ab4aa"
+        },
+        {
+          "path": "rhomax-wavelength-results/diagnostics.json",
+          "bytes": 4462,
+          "sha256": "ef23c90566fcb2e82eee2f9303ccb5697e1f51b828f49ea8d0858f521d9bcd20"
+        },
+        {
+          "path": "rhomax-wavelength-results/ARCHIVE-README.md",
+          "bytes": 3024,
+          "sha256": "76ac34e1ef02ab37807434b9ccbf32fa9633aef06f8dba80d9dd9d02c554b84e"
+        },
+        {
+          "path": "rhomax-wavelength-results/independent-recomputation.txt",
+          "bytes": 1025,
+          "sha256": "f691f3def6797813dd7f7911fd4b433b485d0c6b3497b536ea96e9799a31aec4"
+        },
+        {
+          "path": "rhomax-wavelength-results/ndcg-finite-reference.json",
+          "bytes": 794,
+          "sha256": "0086fcef50b5d9c3377fb0e72dac66688ab6ba6273db8b61c1259cd349bc01fe"
+        },
+        {
+          "path": "rhomax-wavelength-results/test-predictions.json",
+          "bytes": 88633,
+          "sha256": "48ac3f06e7f985e59f44fb0af2bd0a9c48f4b9f1b2f73e0b7a8062382e7b024e"
+        },
+        {
+          "path": "rhomax-wavelength-results/frozen-exploratory-protocol.md",
+          "bytes": 17674,
+          "sha256": "1f2ab839c3b3b1015437d0389c49cf586fc2d144b8b8ca12ab5b44566360e9ac"
+        }
+      ]
+    }
+  ],
+  "recovered_files": [],
+  "status": "PASS"
+}
