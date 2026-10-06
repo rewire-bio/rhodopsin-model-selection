@@ -67,7 +67,7 @@ Composition and the constant only, about 4 seconds on CPU:
 
 ```bash
 rhomax-panel --cache ./cache verify
-rhomax-panel --cache ./cache panel --output ./results --skip-esm
+rhomax-panel --cache ./cache panel --output ./results-baselines --skip-esm
 ```
 
 This already reproduces three of the five archived configurations.
