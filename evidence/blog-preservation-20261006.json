@@ -1,0 +1,43 @@
+{
+  "source_repository": "rewire-bio/rewire.it",
+  "source_commit": "bcf2f130441abf95fc396b43d0b0e640cf783117",
+  "source_path": "posts/the-best-rank-correlation-buys-024-nanometres.md",
+  "source_sha256": "d4e4a7252c4544a58d08eff185dd92e3cdf59f7480eb318b6daa52c86d54ffe8",
+  "verbatim_snapshot": "article/published-research-version-20261006.md",
+  "readable_snapshot": "article/blog-research-version-20261006.md",
+  "transformations": [
+    "Make existing image links relative to article/assets",
+    "Make existing download links relative to downloads"
+  ],
+  "linked_artifacts": [
+    {
+      "path": "assets/01-decision-path.svg",
+      "sha256": "b521e76611d3d6cd48d8296439fc2f39353366ccf8f9ccef5cc13d7c5983922e"
+    },
+    {
+      "path": "assets/01-rank-versus-error.png",
+      "sha256": "a8042f2bb3140c73f58baf843c1de0aafbec614067f4445b35a0c90cd5e2001e"
+    },
+    {
+      "path": "assets/02-prediction-spread.png",
+      "sha256": "7d4eb287516d662c6184cfb5ff53877cae0fd8cee895c6629c3c959ae6472088"
+    },
+    {
+      "path": "assets/04-two-decisions.png",
+      "sha256": "9560223bda0b2d05ad3108ee304a5f8501d6492cae9f434ded69741d05d6e86e"
+    },
+    {
+      "path": "assets/03-distance-bins.png",
+      "sha256": "0af5e6c888dac53be6e9090848ce94b71be953a5940838b5c3ba301a774b6fe5"
+    },
+    {
+      "path": "../downloads/rhomax-wavelength-panel-code.tar.gz",
+      "sha256": "3d66e26a8410f8bcc02f31a58b9776189de71a340f2412596f610fbbc167553e"
+    },
+    {
+      "path": "../downloads/rhomax-wavelength-results.tar.gz",
+      "sha256": "29e4b468acd0b969ec73077fb3aafbd43ad76176c569409b85ef6744bf9dfb0b"
+    }
+  ],
+  "scientific_results_changed": false
+}
